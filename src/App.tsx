@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box } from '@chakra-ui/react';
+//import { Routes, Route } from "react-router-dom";
+import Sidebar from './components/Nav';
+import AllRoutes from './components/Nav/routes';
+/*
+import Competition from './views/Competition';
+import Dashboard from './views/Dashboard';
+import Home from './views/Home';
+import LpUnbinder from './views/lp-unbinder';
+import NitroPool from './views/nitro-pool';
+*/
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Sidebar />
+      <Box ml={{ base: 0, md: 60 }} p="4">
+        <AllRoutes />
+      </Box>
+    </Box>
   );
 }
 
