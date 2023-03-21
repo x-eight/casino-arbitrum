@@ -14,6 +14,7 @@ import NavItem from './components/NavItem';
 
 const Sidebar = () => {
   const [navSize, changeNavSize] = useState(false)
+  const [isColor, setColor] = useState(false)
 
   return (
     <Flex
@@ -31,7 +32,7 @@ const Sidebar = () => {
         <IconButton
           aria-label='Search database'
           background="blue"
-          m={"1rem"}
+          p={"1rem"}
           _hover={{ background: 'none' }}
           icon={<HamburgerIcon />}
           onClick={() => {
@@ -41,12 +42,17 @@ const Sidebar = () => {
               changeNavSize(true)
           }}
         />
+        
+        <Box alignSelf={"center"} display={navSize ? "none" : "flex"} m={"0.5rem"}>
+          <Avatar size="2xl" src="avatar-1.jpg" />
+        </Box>
+
         <Flex alignSelf={"center"} flexDir="column">
-          <NavItem to={"/"} name={"Home"} navSize={navSize} />
-          <NavItem to={"/dashboard"} name={"Dashboard"} navSize={navSize} />
-          <NavItem to={"/nitro-pool"} name={"Nitro Pool"} navSize={navSize} />
-          <NavItem to={"/lp-unbinder"} name={"LP unbinder"} navSize={navSize} />
-          <NavItem to={"/competition"} name={"Competition"} navSize={navSize} />
+          <NavItem id={1} to={"/"} name={"Home"} navSize={navSize} />
+          <NavItem id={2} to={"/dashboard"} name={"Dashboard"} navSize={navSize} />
+          <NavItem id={3} to={"/nitro-pool"} name={"Nitro Pool"} navSize={navSize} />
+          <NavItem id={4} to={"/lp-unbinder"} name={"LP unbinder"} navSize={navSize} />
+          <NavItem id={5} to={"/competition"} name={"Competition"} navSize={navSize} />
         </Flex>
       </Flex>
 
