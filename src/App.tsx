@@ -16,7 +16,7 @@ function App() {
   return (
     <Flex flexDir={"row"}>
       <Sidebar />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <Box w={"100%"} backgroundColor={"#F5F5F5"} >
         <AllRoutes />
       </Box>
     </Flex>
