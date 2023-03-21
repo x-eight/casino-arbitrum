@@ -14,7 +14,6 @@ import NavItem from './components/NavItem';
 
 const Sidebar = () => {
   const [navSize, changeNavSize] = useState(false)
-  const [isColor, setColor] = useState(false)
 
   return (
     <Flex
