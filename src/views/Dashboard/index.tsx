@@ -7,13 +7,12 @@ import {
 } from "@chakra-ui/react";
 import CustomCard from "../../components/card";
 import InfoToken from "../../components/info-card";
-import PlayerList from "../../components/List";
+import CustomList from "../../components/Players-list";
 
 const Dashboard = () => {
   return (
     <Grid
-      
-      m={"5rem 1rem"}
+      m={"5rem 1rem 1rem 1rem"}
       templateColumns="repeat(2, 1fr)"
       templateRows="11.5rem 13rem 11.5rem 25rem"
       gap={4}
@@ -74,38 +73,13 @@ const Dashboard = () => {
         </Text>
       </CustomCard>
       <CustomCard title="Recent Players" hChildren="22rem">
-        <PlayerList/>
+        <CustomList type={1}/>
       </CustomCard>
       <CustomCard title="Recent Winners" hChildren="22rem">
-        <Text fontWeight="bold" color={"red"} fontSize="3rem">
-          $0.00
-        </Text>
+        <CustomList type={2}/>
       </CustomCard>
     </Grid>
   );
 };
 
 export default Dashboard;
-
-/*
-const Dashboard = () => {
-  return (
-    <Grid
-      w={"10"}
-      h={"80rem"}
-      templateColumns="repeat(2, 1fr)" 
-      templateRows="repeat(4, 1fr)"
-      gap={4} 
-    >
-      <GridItem backgroundColor="red" /> 
-      <GridItem backgroundColor="red" /> 
-      <GridItem backgroundColor="red" /> 
-      <GridItem backgroundColor="red" /> 
-      <GridItem backgroundColor="red" /> 
-      <GridItem backgroundColor="red" /> 
-      <GridItem backgroundColor="red" /> 
-      <GridItem backgroundColor="red" /> 
-    </Grid>
-  );
-};
-*/

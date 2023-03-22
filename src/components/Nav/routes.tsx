@@ -4,9 +4,9 @@ import Competition from '../../views/Competition';
 import Dashboard from '../../views/Dashboard';
 import Home from '../../views/Home';
 import LpUnbinder from '../../views/lp-unbinder';
-import NitroPool from '../../views/nitro-pool';
 
 function AllRoutes() {
+
   return (
     <>
       <Routes>
@@ -18,17 +18,11 @@ function AllRoutes() {
         />
         <Route
           path="/"
-          element={
-            <Home />
-          }
+          element={<Home />}
         />
         <Route
           path="/dashboard"
           element={<Dashboard />}
-        />
-        <Route
-          path="/nitro-pool"
-          element={<NitroPool />}
         />
         <Route
           path="/lp-unbinder"

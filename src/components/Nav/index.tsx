@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 import {
   Box,
   Flex,
   Text,
   IconButton,
   Divider,
-  Avatar,
-  Heading
-} from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
-import NavItem from './components/NavItem';
+  Button,
+  Img,
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import BuyImage from "../../assets/buy.svg";
+import NavItem from "./components/NavItem";
+import TokenSymbol from "../TokenSymbol";
 
 const Sidebar = () => {
-  const [navSize, changeNavSize] = useState(false)
+  const [navSize, changeNavSize] = useState(false);
 
   return (
     <Flex
       backgroundColor={"blue"}
-      h={"100vh"}
+      h={"70rem"}
       w={navSize ? "3.5rem" : "14rem"}
       flexDir="column"
       justifyContent="space-between"
@@ -29,50 +30,105 @@ const Sidebar = () => {
         alignItems={navSize ? "center" : "flex-start"}
       >
         <IconButton
-          aria-label='Search database'
+          aria-label="Search database"
           background="blue"
           p={"1rem"}
-          _hover={{ background: 'none' }}
+          _hover={{ background: "none" }}
           icon={<HamburgerIcon />}
           onClick={() => {
-            if (navSize)
-              changeNavSize(false)
-            else
-              changeNavSize(true)
+            if (navSize) changeNavSize(false);
+            else changeNavSize(true);
           }}
         />
-        
-        <Box alignSelf={"center"} display={navSize ? "none" : "flex"} m={"0.5rem"}>
-          <Avatar size="2xl" src="avatar-1.jpg" />
+
+        <Box
+          alignSelf={"center"}
+          display={navSize ? "none" : "flex"}
+          m={"1rem 0.5rem"}
+        >
+          <TokenSymbol symbol="LOTTO" size="10rem" />
         </Box>
 
         <Flex alignSelf={"center"} flexDir="column">
           <NavItem id={1} to={"/"} name={"Home"} navSize={navSize} />
-          <NavItem id={2} to={"/dashboard"} name={"Dashboard"} navSize={navSize} />
-          <NavItem id={3} to={"/nitro-pool"} name={"Nitro Pool"} navSize={navSize} />
-          <NavItem id={4} to={"/lp-unbinder"} name={"LP unbinder"} navSize={navSize} />
-          <NavItem id={5} to={"/competition"} name={"Competition"} navSize={navSize} />
+          <NavItem
+            id={2}
+            to={"/dashboard"}
+            name={"Dashboard"}
+            navSize={navSize}
+          />
+          <NavItem
+            id={3}
+            to={"/nitro-pool"}
+            name={"Nitro Pool"}
+            navSize={navSize}
+            isRedirect={true}
+          />
+          <NavItem
+            id={4}
+            to={"/lp-unbinder"}
+            name={"LP unbinder"}
+            navSize={navSize}
+          />
+          <NavItem
+            id={5}
+            to={"/competition"}
+            name={"Competition"}
+            navSize={navSize}
+          />
         </Flex>
       </Flex>
 
-      <Flex
-        p="5%"
-        flexDir="column"
-        w="100%"
-        alignItems={navSize ? "center" : "flex-start"}
-        mb={4}
-      >
+      <Flex flexDir="column" w="100%" alignItems="center" mb={4}>
         <Divider display={navSize ? "none" : "flex"} />
-        <Flex mt={4} align="center">
-          <Avatar size="sm" src="avatar-1.jpg" />
-          <Flex flexDir="column" ml={4} display={navSize ? "none" : "flex"}>
-            <Heading as="h3" size="sm">Jhon Doe</Heading>
-            <Text color="gray">Admin</Text>
+        <Flex mt={4} align="center" flexDir="column">
+          <a
+            href={`https://app.camelot.exchange/?token1=0x82aF49447D8a07e3bd95BD0d56f35241523fBab1&token2=0x4A35cA865aBEc4205430081ccDF768610e06BfbC`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {navSize ? (
+              <Img
+                w="3rem"
+                h="3rem"
+                src={BuyImage}
+                backgroundColor="red"
+                borderRadius="3rem"
+              />
+            ) : (
+              <Button colorScheme="pink" variant="solid" w="9rem" h="2.5rem">
+                <Img w="2rem" h="2rem" src={BuyImage} />
+                Buy LOTTO
+              </Button>
+            )}
+          </a>
+
+          <Flex flexDir="column" display={navSize ? "none" : "flex"}>
+            <Flex
+              w="7rem"
+              m="0.5rem"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <TokenSymbol symbol="LOTTO" size="2rem" />
+              <Text color="black" size="sm">
+                $2.4587
+              </Text>
+            </Flex>
+            <Flex
+              w="7rem"
+              m="0.5rem"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <TokenSymbol symbol="ETH" size="2.5rem" width="1.5rem" />
+              <Text color="black">$1,806.05</Text>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

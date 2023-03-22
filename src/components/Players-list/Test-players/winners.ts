@@ -1,25 +1,27 @@
-//https://arbiscan.io/tx/0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a
-export const players = [
+export const Twinners = [
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
     created_at: 1679434370,
-    avatar: "https://via.placeholder.com/150",
+    avatar: "",
     Odds: 1,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
     created_at: 1679434370,
-    avatar: "https://via.placeholder.com/150",
+    avatar: "",
     Odds: 10,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
     created_at: 1679434370,
-    avatar: "https://via.placeholder.com/150",
+    avatar: "",
     Odds: 13,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -27,13 +29,15 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 10,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
     created_at: 1679434370,
-    avatar: "https://via.placeholder.com/150",
+    avatar: "",
     Odds: 14,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -41,6 +45,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 10,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -48,6 +53,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 15,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -55,6 +61,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 10,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -62,6 +69,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 15,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -69,6 +77,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 10,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -76,6 +85,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 15,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -83,6 +93,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 10,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -90,6 +101,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 15,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -97,6 +109,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 10,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -104,6 +117,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 2,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -111,6 +125,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 30,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -118,6 +133,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 5,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -125,6 +141,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 60,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -132,6 +149,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 17,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -139,6 +157,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 20,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -146,6 +165,7 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 7,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
   {
     address: "0xc6b92E614aa101A882dC0abAe1286E6CFEE821a7",
@@ -153,5 +173,6 @@ export const players = [
     avatar: "https://via.placeholder.com/150",
     Odds: 80,
     tx: "0x6c489c9cc6dcd650dd6250d77d3ad91d75a51bf0a58ca0dd9450e6283416232a",
+    value: "2,453.48",
   },
 ];

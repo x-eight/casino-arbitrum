@@ -38,7 +38,7 @@ const InfoToken: React.FC<InfoTokenProps> = ({
             {average}
           </Text>
           <Text fontSize={"1.5vh"} color={"black"}>
-            {`$${value}`}
+            {`($${value})`}
           </Text>
         </Flex>
       </Flex>
