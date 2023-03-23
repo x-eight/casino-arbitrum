@@ -15,11 +15,16 @@ import TokenSymbol from "../TokenSymbol";
 
 const Sidebar = () => {
   const [navSize, changeNavSize] = useState(false);
+  const [selectedButton, setSelectedButton] = useState<number | null>(null);
+
+  const handleButtonClick = (color: number) => {
+    setSelectedButton(color);
+  };
 
   return (
     <Flex
-      backgroundColor={"blue"}
-      h={"70rem"}
+      backgroundColor={"#1E1D2D"}
+      h="62rem"
       w={navSize ? "3.5rem" : "14rem"}
       flexDir="column"
       justifyContent="space-between"
@@ -31,7 +36,7 @@ const Sidebar = () => {
       >
         <IconButton
           aria-label="Search database"
-          background="blue"
+          background="#1E1D2D"
           p={"1rem"}
           _hover={{ background: "none" }}
           icon={<HamburgerIcon />}
@@ -50,12 +55,21 @@ const Sidebar = () => {
         </Box>
 
         <Flex alignSelf={"center"} flexDir="column">
-          <NavItem id={1} to={"/"} name={"Home"} navSize={navSize} />
+          <NavItem
+            id={1}
+            to={"/"}
+            name={"Home"}
+            navSize={navSize}
+            isSelected={selectedButton === 1}
+            clickEvent={() => handleButtonClick(1)}
+          />
           <NavItem
             id={2}
             to={"/dashboard"}
             name={"Dashboard"}
             navSize={navSize}
+            isSelected={selectedButton === 2}
+            clickEvent={() => handleButtonClick(2)}
           />
           <NavItem
             id={3}
@@ -63,18 +77,24 @@ const Sidebar = () => {
             name={"Nitro Pool"}
             navSize={navSize}
             isRedirect={true}
+            isSelected={selectedButton === 3}
+            clickEvent={() => handleButtonClick(3)}
           />
           <NavItem
             id={4}
             to={"/lp-unbinder"}
             name={"LP unbinder"}
             navSize={navSize}
+            isSelected={selectedButton === 4}
+            clickEvent={() => handleButtonClick(4)}
           />
           <NavItem
             id={5}
             to={"/competition"}
             name={"Competition"}
             navSize={navSize}
+            isSelected={selectedButton === 5}
+            clickEvent={() => handleButtonClick(5)}
           />
         </Flex>
       </Flex>

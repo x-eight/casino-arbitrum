@@ -12,7 +12,7 @@ import BuyLp from "../../components/buy-lp";
 const LpUnbinder = () => {
     return (
       <Grid
-      m={"5rem 1rem"}
+      m={"1rem 1rem"}
       templateRows="11.5rem 16rem"
       gap={4}
     >

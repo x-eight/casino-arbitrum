@@ -40,7 +40,7 @@ const CustomList: React.FC<CustomListProps> = ({
     <Box h="20.5rem" w="100%" overflowY="scroll">
       <Flex flexWrap="wrap">
         <ColumTitles />
-        <hr color="blue" style={{ width: "100%" }} />
+        <hr color="#1E1D2D" style={{ width: "100%" }} />
         {test.map((u, index) => (
           <>
             <PlayersListItem
@@ -52,7 +52,7 @@ const CustomList: React.FC<CustomListProps> = ({
             tx={u.tx}
             value={u.value}
           />
-          <hr color="blue" style={{ margin:"auto auto", width: "95%" }} />
+          <hr color="#1E1D2D" style={{ margin:"auto auto", width: "95%" }} />
           </>
         ))}
       </Flex>

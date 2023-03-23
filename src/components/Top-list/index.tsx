@@ -19,10 +19,10 @@ const TopList = () => {
   }, [])
 
   return (
-    <Box h="55rem" w="100%" overflowY="scroll">
+    <Box w="100%" /*h="55rem" overflowY="scroll"*/>
       <Flex flexWrap="wrap">
         <ColumTitles />
-        <hr color="blue" style={{ width: "100%" }} />
+        <hr color="#1E1D2D" style={{ width: "100%" }} />
         {players.map((u, index) => (
           <>
             <PlayersListItem
@@ -31,7 +31,7 @@ const TopList = () => {
             avatar={u.avatar}
             value={u.value}
           />
-          <hr color="blue" style={{ margin:"auto auto", width: "95%" }} />
+          <hr color="#1E1D2D" style={{ margin:"auto auto", width: "95%" }} />
           </>
         ))}
       </Flex>

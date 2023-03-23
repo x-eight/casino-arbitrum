@@ -7,6 +7,8 @@ interface NavItemProps {
   navSize: boolean;
   to: string;
   name: string;
+  isSelected: any;
+  clickEvent: (color: any) => void;
   isRedirect?: boolean;
   //setRandom: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -16,13 +18,10 @@ const NavItem: React.FC<NavItemProps> = ({
   to,
   name,
   navSize,
+  isSelected,
+  clickEvent,
   isRedirect = false,
 }) => {
-  const [selectedBox, setSelectedBox] = useState<string | null>(null);
-
-  const handleBoxClick = (boxId: string) => {
-    setSelectedBox(boxId);
-  };
 
   return (
     <Box
@@ -32,9 +31,10 @@ const NavItem: React.FC<NavItemProps> = ({
       id={`box${id}`}
       w={navSize ? "auto" : "13rem"}
       borderRadius={"1rem"}
-      _hover={{ background: "red" }}
-      onClick={() => handleBoxClick(`box${id}`)}
-      bg={selectedBox === `box${id}` ? "blue" : "yellow"}
+      _hover={{ background: "#323140",color:"#c20e0e" }}
+      color={isSelected ? '#c20e0e' : '#ffffff'}
+      bg={isSelected ? '#3e3c52' : '#1E1D2D'}
+      onClick={clickEvent}
     >
       {!isRedirect ? (
         <Link to={to}>

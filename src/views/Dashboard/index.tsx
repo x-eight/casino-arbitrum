@@ -1,29 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Flex,
   Text,
   Code,
   Grid,
+  Box
 } from "@chakra-ui/react";
 import CustomCard from "../../components/card";
 import InfoToken from "../../components/info-card";
 import CustomList from "../../components/Players-list";
+import { getJackpotstats } from "../../service/api";
 
 const Dashboard = () => {
+  const [Jackpot, setJackpot] = useState({ totalJackpot: 0,totalPlayers: 0,totalWinners: 0});
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getJackpotstats().then(Jackpotstat => {
+        setJackpot(Jackpotstat)
+      })
+      .catch(error => console.log(error));
+    }, 5000); // 10 segundos
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   return (
-    <Grid
-      m={"5rem 1rem 1rem 1rem"}
+    <Box height ="55rem" overflowY="scroll">
+      <Grid
+      m={"1rem 1rem 1rem 1rem"}
       templateColumns="repeat(2, 1fr)"
       templateRows="11.5rem 13rem 11.5rem 25rem"
       gap={4}
     >
-      <CustomCard title="test">
+      <CustomCard title="Total Jackpot Distributed">
         <Text fontWeight="bold" color={"red"} fontSize="3rem">
-          $311,172.40
+          ${Jackpot.totalJackpot}
         </Text>
       </CustomCard>
 
-      <CustomCard title="test">
+      <CustomCard title="Total Players">
         <Flex flexDir="column" alignItems="center" m="0.5rem">
           <Code
             colorScheme="purple"
@@ -34,7 +51,7 @@ const Dashboard = () => {
             Winners
           </Code>
           <Text fontWeight={"bold"} color={"black"}>
-            99
+            {Jackpot.totalWinners}
           </Text>
         </Flex>
         <Flex flexDir="column" alignItems="center" m="0.5rem">
@@ -47,7 +64,7 @@ const Dashboard = () => {
             Players
           </Code>
           <Text fontWeight={"bold"} color={"black"}>
-            5378
+            {Jackpot.totalPlayers}
           </Text>
         </Flex>
       </CustomCard>
@@ -73,12 +90,13 @@ const Dashboard = () => {
         </Text>
       </CustomCard>
       <CustomCard title="Recent Players" hChildren="22rem">
-        <CustomList type={1}/>
+        <CustomList type={1} key={1}/>
       </CustomCard>
       <CustomCard title="Recent Winners" hChildren="22rem">
-        <CustomList type={2}/>
+        <CustomList type={2} key={2}/>
       </CustomCard>
     </Grid>
+    </Box>
   );
 };
 
