@@ -55,6 +55,7 @@ const Sidebar = () => {
         </Box>
 
         <Flex alignSelf={"center"} flexDir="column">
+          {/*
           <NavItem
             id={1}
             to={"/"}
@@ -63,6 +64,7 @@ const Sidebar = () => {
             isSelected={selectedButton === 1}
             clickEvent={() => handleButtonClick(1)}
           />
+          */}
           <NavItem
             id={2}
             to={"/dashboard"}
@@ -99,27 +101,40 @@ const Sidebar = () => {
         </Flex>
       </Flex>
 
-      <Flex flexDir="column" w="100%" alignItems="center" mb={4}>
-        <Divider display={navSize ? "none" : "flex"} />
-        <Flex mt={4} align="center" flexDir="column">
+      <Flex
+        flexDir="column"
+        w="100%"
+        alignItems="center"
+        mb={navSize ? "2.5rem" : "1.5rem"}
+      >
+        <Flex align="center" flexDir="column">
           <a
             href={`https://app.camelot.exchange/?token1=0x82aF49447D8a07e3bd95BD0d56f35241523fBab1&token2=0x4A35cA865aBEc4205430081ccDF768610e06BfbC`}
-            rel="noopener noreferrer"
             target="_blank"
           >
             {navSize ? (
-              <Img
+              <Flex
                 w="3rem"
                 h="3rem"
-                src={BuyImage}
-                backgroundColor="red"
-                borderRadius="3rem"
-              />
-            ) : (
-              <Button colorScheme="pink" variant="solid" w="9rem" h="2.5rem">
+                backgroundColor="#854b19"
+                borderRadius="2.5rem"
+                justifyContent="center"
+                alignItems="center"
+              >
                 <Img w="2rem" h="2rem" src={BuyImage} />
-                Buy LOTTO
-              </Button>
+              </Flex>
+            ) : (
+              <Flex
+                borderRadius="3rem"
+                backgroundColor="#854b19"
+                w="9rem"
+                h="2.5rem"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Img w="2rem" h="2rem" src={BuyImage} />
+                <Text>Buy LOTTO</Text>
+              </Flex>
             )}
           </a>
 
@@ -130,8 +145,8 @@ const Sidebar = () => {
               alignItems="center"
               justifyContent="space-between"
             >
-              <TokenSymbol symbol="LOTTO" size="2rem" />
-              <Text color="black" size="sm">
+              <TokenSymbol symbol="LOTTO" size="2.5rem" />
+              <Text color="#ffffff" size="sm">
                 $2.4587
               </Text>
             </Flex>
@@ -142,7 +157,7 @@ const Sidebar = () => {
               justifyContent="space-between"
             >
               <TokenSymbol symbol="ETH" size="2.5rem" width="1.5rem" />
-              <Text color="black">$1,806.05</Text>
+              <Text color="#ffffff">$1,806.05</Text>
             </Flex>
           </Flex>
         </Flex>

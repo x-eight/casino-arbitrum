@@ -14,7 +14,7 @@ const BuyLp: React.FC<BuyLpProps> = ({ title, token, average, value }) => {
     <Flex flexDir="column" w="25rem">
       <Code
         colorScheme="purple"
-        color="black"
+        color="#ffffff"
         border="groove"
         fontFamily="mono"
         w="15%"
@@ -31,14 +31,14 @@ const BuyLp: React.FC<BuyLpProps> = ({ title, token, average, value }) => {
         size="sm"
         w="100%"
       />
-      <Text color="black" fontSize="0.9rem" alignSelf="flex-end">Balance :
-        <span style={{color:"red",fontWeight:"bold"}}>
-            0.00 LOTTO-WETH LP
+      <Text color="#ffffff" fontSize="1rem" alignSelf="flex-end">Balance :
+        <span style={{color:"#854b19",fontWeight:"bold"}}>
+            {` ${"0.00"} LOTTO-WETH LP`}
         </span>
       </Text>
       <Code
         colorScheme="purple"
-        color="black"
+        color="#ffffff"
         border="groove"
         fontFamily="mono"
         w="15%"
@@ -46,7 +46,7 @@ const BuyLp: React.FC<BuyLpProps> = ({ title, token, average, value }) => {
       >
         $0.00
       </Code>
-      <Button colorScheme="red" size="sm" w="100%" mt="0.5rem">
+      <Button backgroundColor="#854b19" size="sm" w="100%" mt="0.5rem">
         Approve
       </Button>
     </Flex>

@@ -44,7 +44,7 @@ export const Address: React.FC<Props> = ({
       <Button
         m="1vh"
         onClick={onOpen}
-        backgroundColor="red"
+        backgroundColor="transparent"
         colorScheme="white"
         variant="outline"
         w="20vh"

@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import Competition from '../../views/Competition';
 import Dashboard from '../../views/Dashboard';
-import Home from '../../views/Home';
+//import Home from '../../views/Home';
 import LpUnbinder from '../../views/lp-unbinder';
 
 function AllRoutes() {
@@ -13,12 +13,12 @@ function AllRoutes() {
         <Route
           path="/index.html"
           element={
-            <Home />
+            <Dashboard />
           }
         />
         <Route
           path="/"
-          element={<Home />}
+          element={<Dashboard />}
         />
         <Route
           path="/dashboard"

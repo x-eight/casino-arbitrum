@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from "react";
-import { Box, Text, Flex, Avatar } from "@chakra-ui/react";
+import { Box, Text, Flex, Avatar,Img } from "@chakra-ui/react";
 import FileImage from "../../../assets/file-symbol.png";
 import XImage from "../../../assets/x-symbol.png";
 
@@ -70,8 +70,8 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Box w="1.5rem">
-            <img src={FileImage} />
+          <Box w="1.5rem" color="#854b19">
+            <Img src={FileImage}/>
           </Box>
         </a>
       </Flex>

@@ -7,10 +7,10 @@ const ColumTitles = () => {
       <Flex w="100%" h="2rem" flexDir="row">
         <Flex w="10%" justifyContent="center"></Flex>
         <Flex w="70%" justifyContent="center">
-          <Text color="black">Player</Text>
+          <Text color="#ffffff" fontWeight="bold">Player</Text>
         </Flex>
         <Flex w="20%" justifyContent="center">
-          <Text color="black">Amount</Text>
+          <Text color="#ffffff" fontWeight="bold">Amount</Text>
         </Flex>
       </Flex>
     );

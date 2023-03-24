@@ -33,7 +33,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
   return (
     <Flex w="100%" h="5rem" flexDir="row" key={index}>
       <Flex w="10%" justifyContent="center" alignItems="center">
-        <Box color="red">
+        <Box color="#854b19">
           {index === 0 ? (
             <>🥇</>
           ) : index === 1 ? (
@@ -52,13 +52,13 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
           size="sm"
         />
         <Flex flexDir="column" m={"0.5rem"}>
-          <Text fontSize="0.8rem" color="black">
+          <Text fontSize="1rem" color="#ffffff" >
             {`${address.slice(0, 6)}...${address.slice(38, 43)}`}
           </Text>
         </Flex>
       </Flex>
       <Flex w="20%" justifyContent="center" alignItems="center">
-        <Text color="black">$ {amount.toFixed(2)}</Text>
+        <Text color="#ffffff">$ {amount.toFixed(2)}</Text>
       </Flex>
     </Flex>
   );

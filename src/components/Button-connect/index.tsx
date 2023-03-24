@@ -9,12 +9,11 @@ import { Address } from "../Address";
 
 
 const CustomButtom = () => {
-    const [walletAddress, setWalletAddress] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
   const [walletBalance, setWalletBalance] = useState(0);
 
   const setWallet = async () => {
     const wallets = await connectWallet();
-    console.log("wallets : ", wallets);
     if (wallets) {
       setWalletAddress(wallets.address);
       setWalletBalance(wallets.balance);
@@ -33,13 +32,11 @@ const CustomButtom = () => {
         ) : (
           <Button
             m="1vh"
-            backgroundColor="red"
+            backgroundColor="#854b19"
             colorScheme="white"
-            variant="outline"
             w="20vh"
             h="5vh"
-            fontFamily="Oxanium"
-            fontWeight="light"
+            fontWeight="bold"
             color="white"
             onClick={() => setWallet()}
           >
