@@ -2,14 +2,17 @@ import React from "react";
 import { Image } from "@chakra-ui/react";
 import ethereumPNG from "../../assets/ethereum.png";
 import ethereumSVG from "../../assets/ethereum.svg";
-import lottoPNG from "../../assets/lotto.png";
+//import lottoPNG from "../../assets/lotto.png";
+import wethPNG from "../../assets/weth.png";
+import tokenPNG from "../../assets/token.png";
 
 const logosBySymbol: { [title: string]: string } = {
   //Real tokens
   //=====================
   ETH: ethereumPNG,
+  WETH: wethPNG,
   ETHSVG: ethereumSVG,
-  LOTTO: lottoPNG,
+  LOTTO: tokenPNG,
 };
 
 type LogoProps = {

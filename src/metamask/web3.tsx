@@ -1,5 +1,7 @@
 import Web3 from "web3";
 import { ethers } from "ethers";
+import { web3ProviderFrom } from "../arbitrum-one/ether-utils";
+import config from "../config";
 
 interface wallet {
   address: string;
@@ -22,6 +24,10 @@ export const initialize = () => {
   }
 };
 
+export function getDefaultProvider(): ethers.providers.Web3Provider {
+  return new ethers.providers.Web3Provider(web3ProviderFrom(config.defaultProvider), config.chainId);
+}
+
 export async function connectWallet(): Promise<wallet | undefined> {
   try {
     // @ts-ignore
@@ -33,6 +39,7 @@ export async function connectWallet(): Promise<wallet | undefined> {
     });
 
     const web3 = new Web3(provider);
+
     //const accounts = await web3.eth.requestAccounts();
     const networkId = await web3.eth.net.getId();
     if (networkId !== 42161) {

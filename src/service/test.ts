@@ -10,7 +10,7 @@ export const players_0 = {
       buyhash:
         "0x31ad0e3915bb2adf4c209634ce66d3add42a239afd8abc0b8623c41e22076dda",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2693.46,
       buyamountusd: 388.21489225885335,
       __v: 0,
     },
@@ -23,7 +23,7 @@ export const players_0 = {
       buyhash:
         "0x6a0d3c9057d0eb0e58210829a6684459601bbf55c537957cb9e74a05f14e2b9b",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2611.46,
       buyamountusd: 422.4511658403595,
       __v: 0,
     },
@@ -36,7 +36,7 @@ export const players_0 = {
       buyhash:
         "0x95052961f4933309c52019cafa0b1ef039e178f1017b5a379f1014f29820d08f",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 351.0262727020805,
       __v: 0,
     },
@@ -49,7 +49,7 @@ export const players_0 = {
       buyhash:
         "0x9c9be066e94b64d48a2989e7a2ab905fc2d170ad01ff679a35376de544575ed5",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 482.9055325256077,
       __v: 0,
     },
@@ -62,7 +62,7 @@ export const players_0 = {
       buyhash:
         "0x54b8fae08b66a9e33322775b0ce47159211e32a498e8540828ff74d55c42fbac",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 499.7529002223093,
       __v: 0,
     },
@@ -75,7 +75,7 @@ export const players_0 = {
       buyhash:
         "0xcd61f87c242bcec44c6fc002fede88d65515b2281b193a3877e6ed2ef2521ea7",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 499.75024364596555,
       __v: 0,
     },
@@ -88,7 +88,7 @@ export const players_0 = {
       buyhash:
         "0x0d9afca72d869791fd78afb2b71dda3d88c254f73987780b4b475e4c0fdb2f64",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 499.8224947547785,
       __v: 0,
     },
@@ -101,7 +101,7 @@ export const players_0 = {
       buyhash:
         "0x971dc6ddf9009ac7a533e1d9b2ba20dc9d9779bdfa652825306a045c7ddb42a1",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 499.8363036595089,
       __v: 0,
     },
@@ -114,7 +114,7 @@ export const players_0 = {
       buyhash:
         "0x5fcf0eb10337da810bb8dbf59d70db346ba9845948c550285fb0c0da11a1f006",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 612.8766545324632,
       __v: 0,
     },
@@ -127,7 +127,7 @@ export const players_0 = {
       buyhash:
         "0x347454b769844bbee9b43a7be5a12a46f570e9698d066bef811426a541862ca3",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 7656.962389019538,
       __v: 0,
     },
@@ -140,7 +140,7 @@ export const players_0 = {
       buyhash:
         "0xdf0015e60283ee8bfc2339b61d4795a383fea9464a9816c3d34dfcc8d15d0ddf",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 822.2203272001442,
       __v: 0,
     },
@@ -153,7 +153,7 @@ export const players_0 = {
       buyhash:
         "0xd321db23a63c43f241e51358ed8e321aefbbbfa60793648732145ecc18c0cf97",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 119.2545127936225,
       __v: 0,
     },
@@ -166,7 +166,7 @@ export const players_0 = {
       buyhash:
         "0xab6cd5823cf22f40154cbf4cab30f6e796a1e90bd0c93abd69057fef43120f8b",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 305.21588035220475,
       __v: 0,
     },
@@ -179,7 +179,7 @@ export const players_0 = {
       buyhash:
         "0x056fd5006ea3b8143a3399a83e5e23f159c9718d5455bf51324090af51f72ccd",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 1739.0853784427106,
       __v: 0,
     },
@@ -192,7 +192,7 @@ export const players_0 = {
       buyhash:
         "0x1892d6351997df0c9f39285a1e5b59e2a9aa39340887abe9d259a8bbbc47ddd5",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 120.1705351457515,
       __v: 0,
     },
@@ -205,7 +205,7 @@ export const players_0 = {
       buyhash:
         "0xb7fc9055c2bd583c75ab4f6656ab7d0366e0a8c0d4441ca51c5e3c351240f84a",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 248.15555281055254,
       __v: 0,
     },
@@ -218,7 +218,7 @@ export const players_0 = {
       buyhash:
         "0xdf77f0cab272a89e887e6f37fee29ee32cc1233a3ed4df7a5e96b80991de5dba",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 1495.769221770786,
       __v: 0,
     },
@@ -231,7 +231,7 @@ export const players_0 = {
       buyhash:
         "0x28602448584d7a27d4adc4b3f2fad40e07d76fda211713a6e364dffef62f9a2a",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 104.70439442969993,
       __v: 0,
     },
@@ -244,7 +244,7 @@ export const players_0 = {
       buyhash:
         "0x3484a7ff8ee63caff245c74b0e0510cfd87d08d6df7207cb1bd7729dc5e55690",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 156.69673110669117,
       __v: 0,
     },
@@ -257,7 +257,7 @@ export const players_0 = {
       buyhash:
         "0x15f9de95ff633fea0e543c33295df6c7bae0944bb8f290cfcc9dfe44c0bf494e",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 122.35193394517901,
       __v: 0,
     },
@@ -276,7 +276,7 @@ export const players_20 = {
       buyhash:
         "0xb3a45bff49cc7482136125c5d537bccee1d20ec2d9a747a7e35d566e07ba00d0",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 498.7767876538868,
       __v: 0,
     },
@@ -289,7 +289,7 @@ export const players_20 = {
       buyhash:
         "0xeaa43d380b0a3768875065ad299e61031534fe00f58609aff5583af4162ec27d",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 871.1882328445524,
       __v: 0,
     },
@@ -302,7 +302,7 @@ export const players_20 = {
       buyhash:
         "0x9b4eee65ce909fcdad071253bd6b66fbe260d6c60cef20f6e62d8093c2729766",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 732.502739304098,
       __v: 0,
     },
@@ -329,7 +329,7 @@ export const players_20 = {
       buyhash:
         "0xbfecc562cc67b2fc679fe2bc1fea81ee71ff25e7bb5ef53285d99b76ce38c0e4",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 372.03669002135246,
       __v: 0,
     },
@@ -342,7 +342,7 @@ export const players_20 = {
       buyhash:
         "0x2ea002418553818c1cb19b5424c8ad6506696d83cff5f018ac294c1b87ba919a",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 159.34429724178028,
       __v: 0,
     },
@@ -355,7 +355,7 @@ export const players_20 = {
       buyhash:
         "0x66297a6148daac6e6056be1cd91dc79c8e5220d95421653117ac53717662da4d",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 104.15698912056979,
       __v: 0,
     },
@@ -368,7 +368,7 @@ export const players_20 = {
       buyhash:
         "0xa1b089082bd18b8e4df2892cb4328cc55eebef176b0f815af86195cf780e1a0f",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 100.93067762704925,
       __v: 0,
     },
@@ -381,7 +381,7 @@ export const players_20 = {
       buyhash:
         "0x3e64ce234bd63410eca52f59ea4399acc680980162dcff6b7eca814749e93ee9",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 500.5800458891467,
       __v: 0,
     },
@@ -394,7 +394,7 @@ export const players_20 = {
       buyhash:
         "0x8b6d658ba591f6935b5c9b4fc143bcc47ecb9a2d11fbc72139ebe7012fe1e4b7",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 228.9321969137908,
       __v: 0,
     },
@@ -407,7 +407,7 @@ export const players_20 = {
       buyhash:
         "0xd922d4949fd782f5314334e5d69a5b6a9a21c3b72c96de2224f0d76e67b5a8d7",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 500.8495509577342,
       __v: 0,
     },
@@ -420,7 +420,7 @@ export const players_20 = {
       buyhash:
         "0x7576f335bdbf7176548b3f8ef73a87b769ed85c0cdb53160c889347681b8763e",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 100.14411288474311,
       __v: 0,
     },
@@ -433,7 +433,7 @@ export const players_20 = {
       buyhash:
         "0x656782757ede2e503bff4841d5072c0dedc9326d676cd378e2beb85bbac6e9b4",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 505.4022506017839,
       __v: 0,
     },
@@ -446,7 +446,7 @@ export const players_20 = {
       buyhash:
         "0x83b2dfc51be3a1abe22a5afb7b85d80ce07895c240d19a10306a47bf75f6b576",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 1007.3727619460437,
       __v: 0,
     },
@@ -459,7 +459,7 @@ export const players_20 = {
       buyhash:
         "0x34d6875eb20c9865d1929247a28451ae7df1fb205dc0173b48c73765a9b82831",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 130.13207259840323,
       __v: 0,
     },
@@ -472,7 +472,7 @@ export const players_20 = {
       buyhash:
         "0xb8598828f549e41d2573701bb7118afceb40aaa43a05e7b60587b67ccd3a9b75",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 119.92136534862786,
       __v: 0,
     },
@@ -485,7 +485,7 @@ export const players_20 = {
       buyhash:
         "0xfddcfe28eda781d88276b92a033b66b0174830400c746232fc7603ec0d904ada",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 101.93442083413716,
       __v: 0,
     },
@@ -498,7 +498,7 @@ export const players_20 = {
       buyhash:
         "0x3d82a55eb51f7dcf2371a52806be818ed1721d3b4f3e98bfc9a925c18db45144",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 152.68963459995422,
       __v: 0,
     },
@@ -511,7 +511,7 @@ export const players_20 = {
       buyhash:
         "0x233597910b7ee65e0b203d08eea8a3baa802885129680cdef919d8986e05a859",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 99.97647689629441,
       __v: 0,
     },
@@ -524,7 +524,7 @@ export const players_20 = {
       buyhash:
         "0xc451bc6147cb8f875928550a30887acf342f762be216ea20669f86c204ead5bd",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 201.95297300724081,
       __v: 0,
     },
@@ -543,7 +543,7 @@ export const players_40 = {
       buyhash:
         "0xca6a6498a3a1311ed2a55fa0f7e72b34ce80495eac387e89bdf0d24bedcd01e9",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 522.339161861733,
       __v: 0,
     },
@@ -556,7 +556,7 @@ export const players_40 = {
       buyhash:
         "0x140b1ac1ba7087bcaf384c791b5fe6ce2d7de1c069c6b23c65e538f29c598471",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 1236.5693375183093,
       __v: 0,
     },
@@ -569,7 +569,7 @@ export const players_40 = {
       buyhash:
         "0xb8b34f270d56ad2bbc93d26fc3cdc938f94f8b29a69465ba862b3a7d41826741",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 112.90729272625481,
       __v: 0,
     },
@@ -582,7 +582,7 @@ export const players_40 = {
       buyhash:
         "0x026ca7c3d1e4df7d7f6562e1a3907f375325e897eff134588fc5a5add2cdbd95",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 104.53799943452067,
       __v: 0,
     },
@@ -595,7 +595,7 @@ export const players_40 = {
       buyhash:
         "0x997f2f1fc57e69a92a4a6fab0e90938b1b6192f767d8b0de14cdc8b2e02e1c5f",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 227.60344396096454,
       __v: 0,
     },
@@ -608,7 +608,7 @@ export const players_40 = {
       buyhash:
         "0x7e05b8e56da430d37b40dab22521ceed5c6496eb3fe8848788649f013f966dd4",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 227.3874302028977,
       __v: 0,
     },
@@ -621,7 +621,7 @@ export const players_40 = {
       buyhash:
         "0x880d9a99a9bc02cdef93ebff1cad376941c4869f6b4b2fe8e3b9f0d78017eef5",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 997.1234577529658,
       __v: 0,
     },
@@ -634,7 +634,7 @@ export const players_40 = {
       buyhash:
         "0xc29a16bf1816d3b3d3b3a5a01c72279424897a3570d662ce4ca70d9617a2203b",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 997.1234652160302,
       __v: 0,
     },
@@ -647,7 +647,7 @@ export const players_40 = {
       buyhash:
         "0xa489f5a32f0dc9a21287761b7a38e1ca899c4e4220f67b82ee16d1a77c5fa876",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 1044.4906734403773,
       __v: 0,
     },
@@ -660,7 +660,7 @@ export const players_40 = {
       buyhash:
         "0x0f82d5e8e08c8f63c24018d0bc9953df94fb1f13cd1dcda9b85d84c9b685984b",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 312.7433259789116,
       __v: 0,
     },
@@ -673,7 +673,7 @@ export const players_40 = {
       buyhash:
         "0xf4c243b4dab4e8e17586ca7e2099a2d09026ba0f377df9542920754ae9b768ad",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 209.15522280637484,
       __v: 0,
     },
@@ -686,7 +686,7 @@ export const players_40 = {
       buyhash:
         "0x317b3440055bc9ac4a9a4932949a1e4eb2c25b0becf0ce5f0b01dff7aa5b454c",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 1174.6489243911617,
       __v: 0,
     },
@@ -699,7 +699,7 @@ export const players_40 = {
       buyhash:
         "0x39970fc51c88a0bd61847a03aade857ad0130f9efb7c5d5b739e7c87ad270bf5",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 169.49905633835132,
       __v: 0,
     },
@@ -712,7 +712,7 @@ export const players_40 = {
       buyhash:
         "0x5160bee065fc7de7a41ccb3cc8e658a1f54b3d15f7a6cc8830c442bb99447979",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 103.50916893984218,
       __v: 0,
     },
@@ -725,7 +725,7 @@ export const players_40 = {
       buyhash:
         "0x640d748f5909ad2b0ed6454d44c3200212fbb64551a4b73caf6205c16d5ca052",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 497.1723005675393,
       __v: 0,
     },
@@ -738,7 +738,7 @@ export const players_40 = {
       buyhash:
         "0x55fab994a60473b9e12869884948f8c666b10a7c99653545887da96b737cdfea",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 627.468590105224,
       __v: 0,
     },
@@ -751,7 +751,7 @@ export const players_40 = {
       buyhash:
         "0x2c54834421eedf3a4ca6af1627ec6af9c6ea81d7170ec042e1b8029c2a74cca9",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 100.40936696828554,
       __v: 0,
     },
@@ -764,7 +764,7 @@ export const players_40 = {
       buyhash:
         "0x380aec5ba802ee19136ea3262a41995a854200af39f472ddac0daef7cfa8d176",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 121.18394818194822,
       __v: 0,
     },
@@ -777,7 +777,7 @@ export const players_40 = {
       buyhash:
         "0x5b298635fe7a1fd1ba4694d14ba92fc1f5764866d16c8b94340875b665d2ad47",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 101.93399762109573,
       __v: 0,
     },
@@ -790,7 +790,7 @@ export const players_40 = {
       buyhash:
         "0xe61be2ca4baf0c3c715233a6e51ac4dc22fcc4d430873a860ba7f63b5e5bff27",
       prizehash: "",
-      jackpotbalance: 0,
+      jackpotbalance: 2111.46,
       buyamountusd: 99.91682110218662,
       __v: 0,
     },
@@ -801,3 +801,60 @@ export const players_60 = {
   maxCount: 5692,
   players: [],
 };
+
+export const tops = [
+  { _id: "0xB40156F51103EbaA842590cE51DD2cD0a9E83cDa", buys: 99910.615368226 },
+  {
+    _id: "0xD4a1dec441846FCC444DcDAb7122f690370A3dC4",
+    buys: 70985.77312879633,
+  },
+  {
+    _id: "0x37AcaE5aa05DfE0b54D0E720302E4fFB9D19d488",
+    buys: 59352.24228380725,
+  },
+  {
+    _id: "0x237A131025eD5990b130dd88183Bd202fC83232D",
+    buys: 58369.00924854008,
+  },
+  {
+    _id: "0x9832eE476D66B58d185b7bD46D05CBCbE4e543e1",
+    buys: 54637.424360949364,
+  },
+  {
+    _id: "0x474265d998C5653a7c6d49c1d159e65C69438eBc",
+    buys: 29013.07859119626,
+  },
+  {
+    _id: "0xADAAc42022154B9853c886246bF32dC6fC78B350",
+    buys: 27616.798092667625,
+  },
+  {
+    _id: "0xda3ACd82436eD4845834904152d8c005eD4dfEd3",
+    buys: 24081.501065436172,
+  },
+  { _id: "0x5933A7Bc534167c7914ff6890b01e4cE1544319B", buys: 22472.4135114465 },
+  {
+    _id: "0xf5F86B874b03fE17487bc1F677a0c4E9A2394Cce",
+    buys: 19684.378255434367,
+  },
+  {
+    _id: "0x29e7aaCA586F983cA0e713a0793D4f9FBf62aFae",
+    buys: 18449.82891075296,
+  },
+  {
+    _id: "0x5F7b5AB7A080f7986A0b24a1Cb67B17E3cc4603f",
+    buys: 18229.954569263526,
+  },
+  {
+    _id: "0x9a070851847fc53F1c96ba3c9e7DCe9acB1d84AC",
+    buys: 16988.161209760347,
+  },
+  {
+    _id: "0x023aB8e20a4682d315Daef4c91DB96bD77934D66",
+    buys: 15677.74607046661,
+  },
+  {
+    _id: "0x2642127cd8a3A4D6765dAa860d0B1A56d03B9547",
+    buys: 14981.282918866373,
+  },
+];

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import {
-    Image,
     Button,
     Flex,
     Spacer,
   } from "@chakra-ui/react";
-import { connectWallet } from "../../ethereum/web3";
+import { connectWallet } from "../../metamask/web3";
 import { Address } from "../Address";
 
 

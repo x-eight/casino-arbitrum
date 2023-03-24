@@ -8,13 +8,13 @@ const ColumTitles = () => {
       <Flex w="100%" h="2rem" flexDir="row">
         <Flex w="10%" justifyContent="center"></Flex>
         <Flex w="65%" justifyContent="center">
-          <Text color="black">Player</Text>
+          <Text color="#ffffff">Player</Text>
         </Flex>
         <Flex w="15%" justifyContent="center">
-          <Text color="black">Odds</Text>
+          <Text color="#ffffff">Odds</Text>
         </Flex>
         <Flex w="10%" justifyContent="center">
-          <Text color="black">Tx</Text>
+          <Text color="#ffffff">Tx</Text>
         </Flex>
       </Flex>
     );

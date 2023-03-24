@@ -10,6 +10,7 @@ import CustomCard from "../../components/card";
 import InfoToken from "../../components/info-card";
 import CustomList from "../../components/Players-list";
 import { getJackpotstats } from "../../service/api";
+import WinnerList from "../../components/Winner-list";
 
 const Dashboard = () => {
   const [Jackpot, setJackpot] = useState({ totalJackpot: 0,totalPlayers: 0,totalWinners: 0});
@@ -35,7 +36,7 @@ const Dashboard = () => {
       gap={4}
     >
       <CustomCard title="Total Jackpot Distributed">
-        <Text fontWeight="bold" color={"red"} fontSize="3rem">
+        <Text fontWeight="bold" color={"#854b19"} fontSize="3rem">
           ${Jackpot.totalJackpot}
         </Text>
       </CustomCard>
@@ -44,26 +45,26 @@ const Dashboard = () => {
         <Flex flexDir="column" alignItems="center" m="0.5rem">
           <Code
             colorScheme="purple"
-            color="black"
+            color="#ffffff"
             border="groove"
             fontFamily="mono"
           >
             Winners
           </Code>
-          <Text fontWeight={"bold"} color={"black"}>
+          <Text fontWeight={"bold"} color={"#ffffff"}>
             {Jackpot.totalWinners}
           </Text>
         </Flex>
         <Flex flexDir="column" alignItems="center" m="0.5rem">
           <Code
             colorScheme="purple"
-            color="black"
+            color="#ffffff"
             border="groove"
             fontFamily="mono"
           >
             Players
           </Code>
-          <Text fontWeight={"bold"} color={"black"}>
+          <Text fontWeight={"bold"} color={"#ffffff"}>
             {Jackpot.totalPlayers}
           </Text>
         </Flex>
@@ -85,15 +86,15 @@ const Dashboard = () => {
       </CustomCard>
 
       <CustomCard title="Your Jackpot winnings">
-        <Text fontWeight="bold" color={"red"} fontSize="3rem">
+        <Text fontWeight="bold" color={"#854b19"} fontSize="3rem">
           $0.00
         </Text>
       </CustomCard>
       <CustomCard title="Recent Players" hChildren="22rem">
-        <CustomList type={1} key={1}/>
+        <CustomList />
       </CustomCard>
       <CustomCard title="Recent Winners" hChildren="22rem">
-        <CustomList type={2} key={2}/>
+        <WinnerList />
       </CustomCard>
     </Grid>
     </Box>

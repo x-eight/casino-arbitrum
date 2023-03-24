@@ -1,5 +1,3 @@
-//import { ChainId } from '@spookyswap/sdk';
-
 export type Deployments = {
   [contractName: string]: {
     address: string;
@@ -8,7 +6,7 @@ export type Deployments = {
 };
 
 export type Configuration = {
-  chainId: number;//ChainId;
+  chainId: number;
   networkName: string;
   ftmscanUrl: string;
   defaultProvider: string;
@@ -36,7 +34,7 @@ export const defaultEthereumConfig = {
   testing: false,
   autoGasMultiplier: 1.5,
   defaultConfirmations: 1,
-  defaultGas: '6000000',
-  defaultGasPrice: '1000000000000',
+  defaultGas: "6000000",
+  defaultGasPrice: "1000000000000",
   ethereumNodeTimeout: 10000,
 };
