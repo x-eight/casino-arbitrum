@@ -4,12 +4,12 @@ import Sidebar from "./components/Nav";
 import AllRoutes from "./components/Nav/routes";
 import CustomButtom from "./components/Button-connect";
 import backgroundImg from "./assets/background.jpg";
-import {LottoFinanceProvider} from "./lotto-provider";
+import {CasinuFinanceProvider} from "./casinu-provider";
 
 function App() {
   // <Flex w={"100%"}  flexDir="column" backgroundColor={"#142343"}  >
   return (
-    <LottoFinanceProvider>
+    <CasinuFinanceProvider>
       <Flex flexDir="row">
       <Sidebar />
       <Flex
@@ -26,7 +26,7 @@ function App() {
         </Box>
       </Flex>
     </Flex>
-    </LottoFinanceProvider>
+    </CasinuFinanceProvider>
   );
 }
 

@@ -1,9 +1,10 @@
 import React, {useState,useEffect} from "react";
-import { Box, Text, Flex, Avatar,Img } from "@chakra-ui/react";
-import FileImage from "../../../assets/file-symbol.png";
+import { Box, Text, Flex, Avatar } from "@chakra-ui/react";
 import XImage from "../../../assets/x-symbol.png";
+import TokenSymbol from "../../TokenSymbol";
 
 interface UserListItemProps {
+  index: number;
   address: string;
   created_at: string;
   avatar: string;
@@ -22,6 +23,7 @@ function randomColor() {
 }
 
 const PlayersListItem: React.FC<UserListItemProps> = ({
+  index,
   address,
   created_at,
   avatar,
@@ -35,7 +37,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
   }, [address])
 
   return (
-    <Flex w="100%" h={value ? "4.5rem" : "3.5rem"} flexDir="row">
+    <Flex key={index} w="100%" h={value ? "4.5rem" : "3.5rem"} flexDir="row">
       <Flex w="10%" justifyContent="center" alignItems="center">
         <Box w="1.5rem">
           <img src={XImage} />
@@ -71,7 +73,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
           target="_blank"
         >
           <Box w="1.5rem" color="#854b19">
-            <Img src={FileImage}/>
+            <TokenSymbol symbol="ARBITRUM" size="3.5rem" width={"3.5rem"} />
           </Box>
         </a>
       </Flex>

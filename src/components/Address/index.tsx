@@ -13,6 +13,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { CopyIcon, CheckIcon } from "@chakra-ui/icons";
+import TokenSymbol from "../TokenSymbol";
 
 type Props = {
   //children: React.ReactNode;
@@ -36,6 +37,7 @@ export const Address: React.FC<Props> = ({
   }, []);
 
   const disconnect = async () => {
+    // @ts-ignore
     setWalletAddress("");
   };
 
@@ -47,22 +49,20 @@ export const Address: React.FC<Props> = ({
         backgroundColor="transparent"
         colorScheme="white"
         variant="outline"
-        w="20vh"
-        h="5vh"
+        w="11rem"
+        h="3rem"
       >
-        Address: {`${address.slice(0, 6)}...${address.slice(38, 43)}`}
-        <br />
-        Balance: {balance.toFixed(2)} ETH
+        {`${address.slice(0, 6)} ... ${address.slice(38, 43)}`}
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalBody>
+            
             <Center flexDirection="column">
-              Address: {`${address.slice(0, 6)}...${address.slice(38, 43)}`}
-              <br />
-              <Text>Balance: {balance.toFixed(2)} ETH</Text>
+              <TokenSymbol symbol="CASINU" size="8rem" />
+              <Text fontWeight="bold">{`${address.slice(0, 6)} ... ${address.slice(38, 43)}`}</Text>
             </Center>
             <br />
             <Flex>

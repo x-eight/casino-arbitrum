@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useMemo } from "react";
 import {
   Flex,
   Text,
@@ -9,11 +9,31 @@ import {
 import CustomCard from "../../components/card";
 import InfoToken from "../../components/info-card";
 import CustomList from "../../components/Players-list";
-import { getJackpotstats } from "../../service/api";
+import { getJackpotstats, getPriceCoingecko } from "../../service/api";
 import WinnerList from "../../components/Winner-list";
+import useCasinuFinance from "../../hooks/useCasinuFinance";
+import useTokenBalance from "../../hooks/useTokenBalance";
+import { getDisplayBalance } from "../../metamask/formatBalance";
+import useBalanceEth from "../../hooks/useBalance";
 
 const Dashboard = () => {
+  const [CasinuPrice, setCasinuPrice] = useState(0);
+  const [EthPrice, setEthPrice] = useState(0);
+
   const [Jackpot, setJackpot] = useState({ totalJackpot: 0,totalPlayers: 0,totalWinners: 0});
+  const casinuFinance = useCasinuFinance();
+
+  const casinuBalance = useTokenBalance(casinuFinance.CASINU);
+  const displayCasinuBalance = useMemo(() => getDisplayBalance(casinuBalance), [
+    casinuBalance,
+  ]);
+
+  const ethFinance = useBalanceEth();
+  const displayEthBalance = useMemo(() => ethFinance, [ethFinance]);
+
+  const casinuByUser = useMemo(() => ((+displayCasinuBalance)*CasinuPrice).toFixed(2), [casinuBalance]);
+  const ethByUser = useMemo(() => ((+displayEthBalance)*EthPrice).toFixed(2), [ethFinance]);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,6 +44,18 @@ const Dashboard = () => {
     }, 5000); // 10 segundos
 
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const firstPlayers = async () => {
+      const ethereum = await getPriceCoingecko("ethereum");
+      setEthPrice(ethereum);
+
+      const casinu = await getPriceCoingecko("casinu");
+      console.log("casinu",casinu)
+      setCasinuPrice(casinu);
+    };
+    firstPlayers();
   }, []);
 
 
@@ -81,8 +113,8 @@ const Dashboard = () => {
       </CustomCard>
 
       <CustomCard title="Your Wallet">
-        <InfoToken token="LOTTO"  average="0"  value="0.00"/>
-        <InfoToken token="ETH"  average="0"  value="0.00"/>
+        <InfoToken token="CASINU"  average={displayCasinuBalance}  value={casinuByUser}/>
+        <InfoToken token="ETH"  average={displayEthBalance.toFixed(4)}  value={ethByUser}/>
       </CustomCard>
 
       <CustomCard title="Your Jackpot winnings">
@@ -91,7 +123,7 @@ const Dashboard = () => {
         </Text>
       </CustomCard>
       <CustomCard title="Recent Players" hChildren="22rem">
-        <CustomList />
+        <CustomList key={1} />
       </CustomCard>
       <CustomCard title="Recent Winners" hChildren="22rem">
         <WinnerList />

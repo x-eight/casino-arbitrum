@@ -2,7 +2,7 @@ import React from "react";
 import { Image } from "@chakra-ui/react";
 import ethereumPNG from "../../assets/ethereum.png";
 import ethereumSVG from "../../assets/ethereum.svg";
-//import lottoPNG from "../../assets/lotto.png";
+//import casinuPNG from "../../assets/casinu.png";
 import wethPNG from "../../assets/weth.png";
 import tokenPNG from "../../assets/token.png";
 
@@ -11,6 +11,7 @@ import dashboard from "../../assets/dashboard.png";
 import home from "../../assets/home.svg";
 import nitro from "../../assets/nitro.svg";
 import unbinder from "../../assets/unbinder.png";
+import arbitrum from "../../assets/arbitrum.svg";
 
 const logosBySymbol: { [title: string]: string } = {
   //Real tokens
@@ -18,9 +19,10 @@ const logosBySymbol: { [title: string]: string } = {
   ETH: ethereumPNG,
   WETH: wethPNG,
   ETHSVG: ethereumSVG,
-  LOTTO: tokenPNG,
+  CASINU: tokenPNG,
   //IMAGE
   //=====================
+  ARBITRUM: arbitrum,
   Competition: competition,
   Dashboard: dashboard,
   Home: home,

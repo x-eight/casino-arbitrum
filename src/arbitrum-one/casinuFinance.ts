@@ -3,8 +3,9 @@ import { BigNumber, Contract, ethers } from "ethers";
 import ERC20 from "./ERC20";
 import config from "../config";
 import { getDefaultProvider } from "../metamask/web3";
+import { getPriceCoingecko } from "../service/api";
 
-export class LottoFinance {
+export class CasinuFinance {
   myAccount: string;
   provider: ethers.providers.Web3Provider;
   signer?: ethers.Signer;
@@ -12,7 +13,7 @@ export class LottoFinance {
   contracts: { [name: string]: Contract };
   externalTokens: { [name: string]: ERC20 };
 
-  LOTTO: ERC20;
+  CASINU: ERC20;
   WETH: ERC20;
   USDC: ERC20;
 
@@ -20,7 +21,6 @@ export class LottoFinance {
     this.myAccount = "";
     const { deployments, externalTokens } = cfg;
     const provider = getDefaultProvider();
-    console.log("deployments", deployments);
     // loads contracts from deployments
     this.contracts = {};
     for (const [name, deployment] of Object.entries(deployments)) {
@@ -40,18 +40,14 @@ export class LottoFinance {
         decimal
       );
     }
-    this.LOTTO = new ERC20(deployments.LOTTO.address, provider, "DUKE");
+    this.CASINU = new ERC20(deployments.CASINU.address, provider, "CASINU");
     this.WETH = new ERC20(deployments.WETH.address, provider, "WETH");
     this.USDC = this.externalTokens["USDC"];
-
+    //console.log("this.WETH.displayedBalanceOf",this.WETH.displayedBalanceOf())
     this.config = cfg;
     this.provider = provider;
   }
 
-  /**
-   * @param provider From an unlocked wallet. (e.g. Metamask)
-   * @param account An address of unlocked wallet account.
-   */
   unlockWallet(provider: any, account: string) {
     const newProvider = new ethers.providers.Web3Provider(
       provider,
@@ -64,7 +60,7 @@ export class LottoFinance {
       this.contracts[name] = contract.connect(this.signer);
     }
     const tokens = [
-      this.LOTTO,
+      this.CASINU,
       this.WETH,
       ...Object.values(this.externalTokens),
     ];
@@ -77,13 +73,29 @@ export class LottoFinance {
     return !!this.myAccount;
   }
 
+  async getEthBalance(): Promise<number> {
+    if (this.myAccount.length !== 42) return 0;
+    // @ts-ignore
+    const balanceReq = await window.ethereum.request({
+      method: "eth_getBalance",
+      params: [this.myAccount, "latest"],
+    });
+
+    const balance = +ethers.utils.formatEther(balanceReq);
+    return balance;
+  }
+
+  async getPriceOfDollar(token: string): Promise<number> {
+    return await getPriceCoingecko(token);
+  }
+
   async watchAssetInMetamask(assetName: string): Promise<boolean> {
     const { ethereum } = window as any;
     if (ethereum && ethereum.networkVersion === config.chainId.toString()) {
       let asset;
       let assetUrl;
       if (assetName === "DUKE") {
-        asset = this.LOTTO;
+        asset = this.CASINU;
         assetUrl = "https://duke-finance.s3.amazonaws.com/token/DUKE.png";
       } else if (assetName === "DSHARE") {
         asset = this.WETH;

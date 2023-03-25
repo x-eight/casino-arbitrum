@@ -1,6 +1,5 @@
 import React from "react";
 import { Flex, Text, Code, Input, Button } from "@chakra-ui/react";
-import TokenSymbol from "../TokenSymbol";
 
 interface BuyLpProps {
   title?: string;
@@ -33,7 +32,7 @@ const BuyLp: React.FC<BuyLpProps> = ({ title, token, average, value }) => {
       />
       <Text color="#ffffff" fontSize="1rem" alignSelf="flex-end">Balance :
         <span style={{color:"#854b19",fontWeight:"bold"}}>
-            {` ${"0.00"} LOTTO-WETH LP`}
+            {` ${"0.00"} CASINU-WETH LP`}
         </span>
       </Text>
       <Code

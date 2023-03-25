@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   Box,
   Flex,
   Text,
   IconButton,
-  Divider,
-  Button,
   Img,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import BuyImage from "../../assets/buy.svg";
 import NavItem from "./components/NavItem";
 import TokenSymbol from "../TokenSymbol";
+import { getPriceCoingecko } from "../../service/api";
 
 const Sidebar = () => {
   const [navSize, changeNavSize] = useState(false);
@@ -20,10 +19,26 @@ const Sidebar = () => {
   const handleButtonClick = (color: number) => {
     setSelectedButton(color);
   };
+  
+  const [CasinuPrice, setCasinuPrice] = useState(0);
+  const [EthPrice, setEthPrice] = useState(0);
+
+  useEffect(() => {
+    const firstPlayers = async () => {
+      const ethereum = await getPriceCoingecko("ethereum");
+      setEthPrice(ethereum);
+
+      const casinu = await getPriceCoingecko("casinu");
+      console.log("casinu",casinu)
+      setCasinuPrice(casinu);
+    };
+    firstPlayers();
+  }, []);
+
 
   return (
     <Flex
-      backgroundColor={"#1E1D2D"}
+      backgroundColor={"#1e1f21"}
       h="62rem"
       w={navSize ? "3.5rem" : "14rem"}
       flexDir="column"
@@ -36,7 +51,6 @@ const Sidebar = () => {
       >
         <IconButton
           aria-label="Search database"
-          background="#1E1D2D"
           p={"1rem"}
           _hover={{ background: "none" }}
           icon={<HamburgerIcon />}
@@ -51,7 +65,7 @@ const Sidebar = () => {
           display={navSize ? "none" : "flex"}
           m={"1rem 0.5rem"}
         >
-          <TokenSymbol symbol="LOTTO" size="10rem" />
+          <TokenSymbol symbol="CASINU" size="10rem" />
         </Box>
 
         <Flex alignSelf={"center"} flexDir="column">
@@ -82,6 +96,7 @@ const Sidebar = () => {
             isSelected={selectedButton === 3}
             clickEvent={() => handleButtonClick(3)}
           />
+          {/*
           <NavItem
             id={4}
             to={"/lp-unbinder"}
@@ -90,6 +105,7 @@ const Sidebar = () => {
             isSelected={selectedButton === 4}
             clickEvent={() => handleButtonClick(4)}
           />
+          */}
           <NavItem
             id={5}
             to={"/competition"}
@@ -133,7 +149,7 @@ const Sidebar = () => {
                 alignItems="center"
               >
                 <Img w="2rem" h="2rem" src={BuyImage} />
-                <Text>Buy LOTTO</Text>
+                <Text>Buy CASINU</Text>
               </Flex>
             )}
           </a>
@@ -145,9 +161,9 @@ const Sidebar = () => {
               alignItems="center"
               justifyContent="space-between"
             >
-              <TokenSymbol symbol="LOTTO" size="2.5rem" />
+              <TokenSymbol symbol="CASINU" size="2.5rem" />
               <Text color="#ffffff" size="sm">
-                $2.4587
+              ${CasinuPrice.toFixed(2)}
               </Text>
             </Flex>
             <Flex
@@ -157,7 +173,7 @@ const Sidebar = () => {
               justifyContent="space-between"
             >
               <TokenSymbol symbol="ETH" size="2.5rem" width="1.5rem" />
-              <Text color="#ffffff">$1,806.05</Text>
+              <Text color="#ffffff">${EthPrice.toFixed(2)}</Text>
             </Flex>
           </Flex>
         </Flex>

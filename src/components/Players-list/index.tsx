@@ -65,6 +65,7 @@ const CustomList: React.FC = () => {
               <>
                 <PlayersListItem
                   key={index}
+                  index={index}
                   address={u.address}
                   created_at={u.created_at}
                   avatar={u.avatar}

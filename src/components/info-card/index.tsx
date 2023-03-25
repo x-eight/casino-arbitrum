@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Text, Code, Box } from "@chakra-ui/react";
+import { Flex, Text, Code } from "@chakra-ui/react";
 import TokenSymbol from "../TokenSymbol";
 
 interface InfoTokenProps {
@@ -29,12 +29,12 @@ const InfoToken: React.FC<InfoTokenProps> = ({
         </Code>
       ) : null}
       <Flex flexDir="row" justifyContent="space-between">
-        {token !== "LOTTO-WETH LP" ? (
+        {token !== "CASINU-WETH LP" ? (
           <TokenSymbol symbol={token} size="3.5rem" width={"3.5rem"} />
         ) : (
           <Flex flexDir="row">
             <TokenSymbol
-              symbol="LOTTO"
+              symbol="CASINU"
               size="3.5rem"
               width="3.5rem"
             />

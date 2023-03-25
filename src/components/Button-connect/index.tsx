@@ -34,8 +34,8 @@ const CustomButtom = () => {
             m="1vh"
             backgroundColor="#854b19"
             colorScheme="white"
-            w="20vh"
-            h="5vh"
+            w="11rem"
+            h="3rem"
             fontWeight="bold"
             color="white"
             onClick={() => setWallet()}

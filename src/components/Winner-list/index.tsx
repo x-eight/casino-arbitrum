@@ -34,6 +34,7 @@ const WinnerList: React.FC = () => {
         {winners.map((u, index) => (
           <>
             <PlayersListItem
+            index={index}
             key={index}
             address={u.address}
             created_at={u.created_at}

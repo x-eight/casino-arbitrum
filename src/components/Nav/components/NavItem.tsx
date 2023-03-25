@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import home from "../../../assets/home.svg"
-import TokenSymbol from "../../TokenSymbol"
-import { Box, Flex, Text, Avatar,Img } from "@chakra-ui/react";
+import home from "../../../assets/home.svg";
+import competition from "../../../assets/competition.svg";
+import nitro from "../../../assets/nitro.svg";
+import unbinder from "../../../assets/unbinder.png";
+import dashboard from "../../../assets/dashboard.png";
+import { Box, Flex, Text, Avatar } from "@chakra-ui/react";
 
 interface NavItemProps {
   id: number;
@@ -15,6 +18,20 @@ interface NavItemProps {
   //setRandom: React.Dispatch<React.SetStateAction<number>>;
 }
 
+function GetImage(type: string) {
+  let image = home;
+  if (type === "Dashboard") {
+    image = dashboard;
+  } else if (type === "Nitro Pool") {
+    image = nitro;
+  } else if (type === "LP unbinder") {
+    image = unbinder;
+  } else if (type === "Competition") {
+    image = competition;
+  }
+  return image;
+}
+
 const NavItem: React.FC<NavItemProps> = ({
   id,
   to,
@@ -24,7 +41,11 @@ const NavItem: React.FC<NavItemProps> = ({
   clickEvent,
   isRedirect = false,
 }) => {
-  //<Avatar size="sm" src="avatar-1.jpg" />
+  const [image, setImage] = useState(home);
+  useEffect(() => {
+    setImage(GetImage(name));
+  }, [name]);
+
   return (
     <Box
       m={"0rem 0.8rem"}
@@ -33,15 +54,15 @@ const NavItem: React.FC<NavItemProps> = ({
       id={`box${id}`}
       w={navSize ? "auto" : "13rem"}
       borderRadius={"1rem"}
-      _hover={{ background: "#323140",color:"#854b19" }}
-      color={isSelected ? "#854b19" : '#ffffff'}
-      bg={isSelected ? '#3e3c52' : '#1E1D2D'}
+      _hover={{ background: "#323140", color: "#854b19" }}
+      color={isSelected ? "#854b19" : "#ffffff"}
+      bg={isSelected ? "#3e3c52" : "#1e1f21"}
       onClick={clickEvent}
     >
       {!isRedirect ? (
         <Link to={to}>
           <Flex align="center">
-          <Avatar size="sm" name={name} src="avatar-1.jpg" />
+            <Avatar size="sm" name={name} src={image} />
             <Flex ml={"1rem"} display={navSize ? "none" : "flex"}>
               <Text>{name}</Text>
             </Flex>
@@ -54,7 +75,7 @@ const NavItem: React.FC<NavItemProps> = ({
           target="_blank"
         >
           <Flex align="center">
-          <Avatar size="sm" name={name} src="avatar-1.jpg" />
+            <Avatar size="sm" name={name} src={image} />
             <Flex ml={"1rem"} display={navSize ? "none" : "flex"}>
               <Text>{name}</Text>
             </Flex>

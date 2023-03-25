@@ -10,7 +10,7 @@ const configurations: { [env: string]: Configuration } = {
     deployments: require("./arbitrum-one/deployments/deployments.testing.json"),
     externalTokens: {
       USDC: ["0x8F3f5b275184aC52B4f6157f1f3833Dc120cfB3D", 6],
-      "LOTTO-WETH LP": ["0x4F88BC837199e7E04b5f6071DFf0d019b957238d", 18], //DUKE-USDC-LP
+      "CASINU-WETH LP": ["0x4F88BC837199e7E04b5f6071DFf0d019b957238d", 18], //DUKE-USDC-LP
     },
     baseLaunchDate: new Date("2021-06-02 13:00:00Z"),
     bondLaunchesAt: new Date("2020-12-03T15:00:00Z"),
@@ -26,7 +26,7 @@ const configurations: { [env: string]: Configuration } = {
     deployments: require("./arbitrum-one/deployments/deployments.testing.json"),
     externalTokens: {
       USDC: ["0x8F3f5b275184aC52B4f6157f1f3833Dc120cfB3D", 6],
-      "LOTTO-WETH LP": ["0x4F88BC837199e7E04b5f6071DFf0d019b957238d", 18], //DUKE-USDC-LP
+      "CASINU-WETH LP": ["0x4F88BC837199e7E04b5f6071DFf0d019b957238d", 18], //DUKE-USDC-LP
     },
     baseLaunchDate: new Date("2021-06-02 13:00:00Z"),
     bondLaunchesAt: new Date("2020-12-03T15:00:00Z"),

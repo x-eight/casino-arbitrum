@@ -21,15 +21,11 @@ function AllRoutes() {
           element={<Dashboard />}
         />
         <Route
-          path="/dashboard"
-          element={<Dashboard />}
-        />
-        <Route
-          path="/lp-unbinder"
-          element={<LpUnbinder />}
-        />
-        <Route
           path="/competition"
+          element={<Competition />}
+        />
+        <Route
+          path="/*"
           element={<Competition />}
         />
       </Routes>

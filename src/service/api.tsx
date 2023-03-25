@@ -1,11 +1,7 @@
 import axios from "axios";
-import { players_0, players_20, tops } from "./test";
+import { tops } from "./test";
 
-const urlWithProxy = "https://dapp.lottoarbitrum.com/api";
-//const urlWithProxy = "http://localhost:3000/v1";
-
-axios.defaults.withCredentials = true;
-
+const urlWithProxy = "https://casinu-api-production.up.railway.app";
 interface JackpotstatResponse {
   totalJackpot: number;
   totalPlayers: number;
@@ -14,15 +10,12 @@ interface JackpotstatResponse {
 
 export async function getJackpotstats(): Promise<JackpotstatResponse> {
   try {
-    const url = `${urlWithProxy}/jackpotstats`;
-    //const response = await axios.get(url);
+    const response = await axios.get(`${urlWithProxy}/tickets/stats`);
 
-    //console.log("response", response);
-    //console.log(i++)
     return {
-      totalJackpot: 337849.84,
-      totalPlayers: 5691,
-      totalWinners: 107,
+      totalJackpot: +response.data.jackpotDistributed,
+      totalPlayers: +response.data.players,
+      totalWinners: +response.data.winners,
     };
   } catch (err:any) {
     throw new Error(err.message);
@@ -42,26 +35,17 @@ export async function getRecentplayers(
   skip: number
 ): Promise<PlayersResponse[]> {
   try {
-    const url = `${urlWithProxy}/recentplayers/?limit=20&skip=${skip}`;
-    console.log("skip",skip)
-    let data = players_0.players;
-    if (skip === 0) {
-      data = players_0.players;
-    } else if (skip === 20) {
-      data = players_20.players;
-    } else {
-      data = new Array<any>();
-    }
+    const response = await axios.get(`${urlWithProxy}/tickets?limit=15&skip=${skip}`);
 
-    return data.map((p) => {
-      const dateObj = new Date(p.timestamp*1000); // crear objeto de fecha
+    return response.data.tickets.map((p:any) => {
+      const dateObj = new Date(p.timestamp*1000); 
       const dateString = dateObj.toLocaleDateString("en-US");
       const timeString = dateObj.toLocaleTimeString("en-US", { hour12: true, hour: "numeric", minute: "numeric" });
 
       return {
-        address: p.address,
-        chance: p.chance,
-        tx: p.buyhash,
+        address: p.player_address,
+        chance: p.odds,
+        tx: p.buy_tx_hash,
         avatar: "",
         created_at: `${dateString} ${timeString}`,
       };
@@ -75,18 +59,9 @@ export async function getRecentwinnings(
   skip: number
 ): Promise<PlayersResponse[]> {
   try {
-    const url = `${urlWithProxy}/recentwinnings/?limit=20&skip=${skip}`;
+    const response = await axios.get(`${urlWithProxy}/tickets/winners?limit=15&skip=${skip}`);
 
-    let data = players_0.players;
-    if (skip === 0) {
-      data = players_0.players;
-    } else if (skip === 20) {
-      data = players_20.players;
-    } else {
-      data = new Array<any>();
-    }
-
-    return data.map((p) => {
+    return response.data.tickets.map((p:any) => {
       const dateObj = new Date(p.timestamp*1000);
       const dateString = dateObj.toLocaleDateString("en-US");
       const timeString = dateObj.toLocaleTimeString("en-US", { hour12: true, hour: "numeric", minute: "numeric" });
@@ -113,7 +88,7 @@ export async function getTopplayers(
   skip: number
 ): Promise<TopsResponse[]> {
   try {
-    const url = `${urlWithProxy}/topplayers/?limit=20&skip=${skip}`;
+    //const url = `${urlWithProxy}/topplayers/?limit=20&skip=${skip}`;
     const data = tops 
 
     return data.map((p) => {
@@ -126,3 +101,17 @@ export async function getTopplayers(
     throw new Error(err.message);
   }
 }
+
+
+export async function getPriceCoingecko(token:string): Promise<number> {
+  try {
+    const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${token}&vs_currencies=USD`);
+
+    if(!response.data[token]?.usd)return 0.1
+    return response.data[token]?.usd
+  } catch (err:any) {
+    console.log("error :",err.message)
+    return 0.1
+  }
+}
+

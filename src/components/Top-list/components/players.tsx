@@ -28,7 +28,6 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
   useEffect(() => {
     setColorAvatar(randomColor());
   }, [address]);
-  console.log(index);
 
   return (
     <Flex w="100%" h="5rem" flexDir="row" key={index}>
