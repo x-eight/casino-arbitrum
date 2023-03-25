@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copia de los archivos necesarios a la imagen del contenedor
 COPY package*.json ./
+COPY package-lock.json ./
 
 # Instalación de las dependencias
 RUN npm install
