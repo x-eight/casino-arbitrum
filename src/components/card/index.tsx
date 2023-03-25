@@ -3,7 +3,7 @@ import { Flex, Text, GridItem } from "@chakra-ui/react";
 
 interface CustomCardProps {
   title: string;
-  children: React.ReactNode;
+  children: React.ReactNode | React.ReactNode[];
   hChildren?: string;
 }
 

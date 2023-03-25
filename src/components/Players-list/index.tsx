@@ -62,10 +62,10 @@ const CustomList: React.FC = () => {
         ) : (
           <>
             {players.map((u, index) => (
-              <>
+       
                 <PlayersListItem
                   key={index}
-                  index={index}
+              
                   address={u.address}
                   created_at={u.created_at}
                   avatar={u.avatar}
@@ -73,11 +73,7 @@ const CustomList: React.FC = () => {
                   tx={u.tx}
                   value={u.value}
                 />
-                <hr
-                  color="#1E1D2D"
-                  style={{ margin: "auto auto", width: "95%" }}
-                />
-              </>
+         
             ))}
           </>
         )}

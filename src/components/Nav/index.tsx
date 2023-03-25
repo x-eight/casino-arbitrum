@@ -68,16 +68,15 @@ const Sidebar = () => {
         </Box>
 
         <Flex alignSelf={"center"} flexDir="column">
-          {/*
           <NavItem
             id={1}
             to={"/"}
             name={"Home"}
             navSize={navSize}
+            redirect={`https://www.casinuarbitrum.xyz/`}
             isSelected={selectedButton === 1}
             clickEvent={() => handleButtonClick(1)}
           />
-          */}
           <NavItem
             id={2}
             to={"/"}
@@ -91,7 +90,7 @@ const Sidebar = () => {
             to={"/nitro-pool"}
             name={"Nitro Pool"}
             navSize={navSize}
-            isRedirect={true}
+            redirect={`https://app.camelot.exchange/nitro/0x761Adb257558eBebE97d65AD7aCe5DDd4d06e83d`}
             isSelected={selectedButton === 3}
             clickEvent={() => handleButtonClick(3)}
           />
@@ -169,7 +168,7 @@ const Sidebar = () => {
               w="7rem"
               m="0.5rem"
               alignItems="center"
-              justifyContent="space-between"
+              justifyContent="space-evenly"
             >
               <TokenSymbol symbol="ETH" size="2.5rem" width="1.5rem" />
               <Text color="#ffffff">${EthPrice.toFixed(2)}</Text>

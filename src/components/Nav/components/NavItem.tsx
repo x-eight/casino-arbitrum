@@ -14,7 +14,7 @@ interface NavItemProps {
   name: string;
   isSelected: any;
   clickEvent: (color: any) => void;
-  isRedirect?: boolean;
+  redirect?: string;
   //setRandom: React.Dispatch<React.SetStateAction<number>>;
 }
 
@@ -39,7 +39,7 @@ const NavItem: React.FC<NavItemProps> = ({
   navSize,
   isSelected,
   clickEvent,
-  isRedirect = false,
+  redirect,
 }) => {
   const [image, setImage] = useState(home);
   useEffect(() => {
@@ -59,7 +59,7 @@ const NavItem: React.FC<NavItemProps> = ({
       bg={isSelected ? "#3e3c52" : "#1e1f21"}
       onClick={clickEvent}
     >
-      {!isRedirect ? (
+      {!redirect ? (
         <Link to={to}>
           <Flex align="center">
             <Avatar size="sm" name={name} src={image} />
@@ -70,7 +70,7 @@ const NavItem: React.FC<NavItemProps> = ({
         </Link>
       ) : (
         <a
-          href={`https://app.camelot.exchange/nitro/0x761Adb257558eBebE97d65AD7aCe5DDd4d06e83d`}
+          href={redirect}
           rel="noopener noreferrer"
           target="_blank"
         >

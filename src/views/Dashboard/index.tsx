@@ -118,7 +118,7 @@ const Dashboard = () => {
         </Text>
       </CustomCard>
       <CustomCard title="Recent Players" hChildren="22rem">
-        <CustomList key={1} />
+        <CustomList />
       </CustomCard>
       <CustomCard title="Recent Winners" hChildren="22rem">
         <WinnerList />

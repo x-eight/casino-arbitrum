@@ -32,9 +32,7 @@ const WinnerList: React.FC = () => {
         <ColumTitles />
         <hr color="#1E1D2D" style={{ width: "100%" }} />
         {winners.map((u, index) => (
-          <>
             <PlayersListItem
-            index={index}
             key={index}
             address={u.address}
             created_at={u.created_at}
@@ -43,8 +41,6 @@ const WinnerList: React.FC = () => {
             tx={u.tx}
             value={u.value}
           />
-          <hr color="#1E1D2D" style={{ margin:"auto auto", width: "95%" }} />
-          </>
         ))}
       </Flex>
     </Box>

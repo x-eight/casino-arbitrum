@@ -1,10 +1,9 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Text, Flex, Avatar } from "@chakra-ui/react";
 import XImage from "../../../assets/x-symbol.png";
 import TokenSymbol from "../../TokenSymbol";
 
 interface UserListItemProps {
-  index: number;
   address: string;
   created_at: string;
   avatar: string;
@@ -23,7 +22,6 @@ function randomColor() {
 }
 
 const PlayersListItem: React.FC<UserListItemProps> = ({
-  index,
   address,
   created_at,
   avatar,
@@ -31,53 +29,58 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
   tx,
   value,
 }) => {
-  const [colorAvatar, setColorAvatar] = useState("#ffffff")
+  const [colorAvatar, setColorAvatar] = useState("#ffffff");
   useEffect(() => {
-    setColorAvatar(randomColor())
-  }, [address])
+    setColorAvatar(randomColor());
+  }, [address]);
 
   return (
-    <Flex key={index} w="100%" h={value ? "4.5rem" : "3.5rem"} flexDir="row">
-      <Flex w="10%" justifyContent="center" alignItems="center">
-        <Box w="1.5rem">
-          <img src={XImage} />
-        </Box>
-      </Flex>
-      <Flex w="65%" alignItems="center" flexDir="row">
-        <Avatar
-          src={avatar ?? "avatar-1.jpg"}
-          bgColor={colorAvatar}
-          size="sm"
-        />
-        <Flex flexDir="column" m={"0.5rem"}>
-          <Text fontSize="0.8rem" color="#ffffff">
-            {address?`${address.slice(0, 6)}...${address.slice(38, 43)}`:""}
-          </Text>
-          <Text fontSize="0.8rem" color="#ffffff">
-            {created_at}
-          </Text>
-          {value ? (
+    <>
+      <Flex w="100%" h={value ? "4.5rem" : "3.5rem"} flexDir="row">
+        <Flex w="10%" justifyContent="center" alignItems="center">
+          <Box w="1.5rem">
+            <img src={XImage} />
+          </Box>
+        </Flex>
+        <Flex w="65%" alignItems="center" flexDir="row">
+          <Avatar
+            src={avatar ?? "avatar-1.jpg"}
+            bgColor={colorAvatar}
+            size="sm"
+          />
+          <Flex flexDir="column" m={"0.5rem"}>
             <Text fontSize="0.8rem" color="#ffffff">
-              ${value}
+              {address
+                ? `${address.slice(0, 6)}...${address.slice(38, 43)}`
+                : ""}
             </Text>
-          ) : null}
+            <Text fontSize="0.8rem" color="#ffffff">
+              {created_at}
+            </Text>
+            {value ? (
+              <Text fontSize="0.8rem" color="#ffffff">
+                ${value}
+              </Text>
+            ) : null}
+          </Flex>
+        </Flex>
+        <Flex w="15%" justifyContent="center" alignItems="center">
+          <Text color="#ffffff">{odds}%</Text>
+        </Flex>
+        <Flex w="10%" justifyContent="center" alignItems="center">
+          <a
+            href={`https://arbiscan.io/tx/${tx}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Box w="1.5rem" color="#854b19">
+              <TokenSymbol symbol="ARBITRUM" size="3.5rem" width={"3.5rem"} />
+            </Box>
+          </a>
         </Flex>
       </Flex>
-      <Flex w="15%" justifyContent="center" alignItems="center">
-        <Text color="#ffffff">{odds}%</Text>
-      </Flex>
-      <Flex w="10%" justifyContent="center" alignItems="center">
-        <a
-          href={`https://arbiscan.io/tx/${tx}`}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Box w="1.5rem" color="#854b19">
-            <TokenSymbol symbol="ARBITRUM" size="3.5rem" width={"3.5rem"} />
-          </Box>
-        </a>
-      </Flex>
-    </Flex>
+      <hr color="#1E1D2D" style={{ margin: "auto auto", width: "95%" }} />
+    </>
   );
 };
 

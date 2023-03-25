@@ -60,17 +60,17 @@ export async function getRecentwinnings(
 ): Promise<PlayersResponse[]> {
   try {
     const response = await axios.get(`${urlWithProxy}/tickets/winners?limit=15&skip=${skip}`);
-
+    console.log("response.data.tickets",response.data.tickets)
     return response.data.tickets.map((p:any) => {
       const dateObj = new Date(p.timestamp*1000);
       const dateString = dateObj.toLocaleDateString("en-US");
       const timeString = dateObj.toLocaleTimeString("en-US", { hour12: true, hour: "numeric", minute: "numeric" });
       return {
-        address: p.address,
-        chance: p.chance,
-        tx: p.buyhash,
+        address: p.player_address,
+        chance: p.odds,
+        tx: p.buy_tx_hash,
         avatar: "",
-        value: p.jackpotbalance,
+        value: p.prize_amount,
         created_at: `${dateString} ${timeString}`,
       };
     });
