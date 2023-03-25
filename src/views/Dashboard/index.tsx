@@ -14,26 +14,22 @@ import WinnerList from "../../components/Winner-list";
 import useCasinuFinance from "../../hooks/useCasinuFinance";
 import useTokenBalance from "../../hooks/useTokenBalance";
 import { getDisplayBalance } from "../../metamask/formatBalance";
-import useBalanceEth from "../../hooks/useBalance";
+import useBalanceEth from "../../hooks/useBalanceEth";
 
 const Dashboard = () => {
   const [CasinuPrice, setCasinuPrice] = useState(0);
   const [EthPrice, setEthPrice] = useState(0);
 
   const [Jackpot, setJackpot] = useState({ totalJackpot: 0,totalPlayers: 0,totalWinners: 0});
-  const casinuFinance = useCasinuFinance();
+  const {casinuFinance} = useCasinuFinance();
 
   const casinuBalance = useTokenBalance(casinuFinance.CASINU);
-  const displayCasinuBalance = useMemo(() => getDisplayBalance(casinuBalance), [
-    casinuBalance,
-  ]);
-
+  const displayCasinuBalance = useMemo(() => getDisplayBalance(casinuBalance), [casinuBalance]);
+  const casinuByUser = useMemo(() => ((+displayCasinuBalance)*CasinuPrice).toFixed(2), [casinuBalance]);
+  
   const ethFinance = useBalanceEth();
   const displayEthBalance = useMemo(() => ethFinance, [ethFinance]);
-
-  const casinuByUser = useMemo(() => ((+displayCasinuBalance)*CasinuPrice).toFixed(2), [casinuBalance]);
   const ethByUser = useMemo(() => ((+displayEthBalance)*EthPrice).toFixed(2), [ethFinance]);
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,7 +48,6 @@ const Dashboard = () => {
       setEthPrice(ethereum);
 
       const casinu = await getPriceCoingecko("casinu");
-      console.log("casinu",casinu)
       setCasinuPrice(casinu);
     };
     firstPlayers();
@@ -113,7 +108,7 @@ const Dashboard = () => {
       </CustomCard>
 
       <CustomCard title="Your Wallet">
-        <InfoToken token="CASINU"  average={displayCasinuBalance}  value={casinuByUser}/>
+        <InfoToken token="CASINU"  average={ displayCasinuBalance}  value={casinuByUser}/>
         <InfoToken token="ETH"  average={displayEthBalance.toFixed(4)}  value={ethByUser}/>
       </CustomCard>
 

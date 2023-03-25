@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import {
     Button,
     Flex,
@@ -6,17 +6,27 @@ import {
   } from "@chakra-ui/react";
 import { connectWallet } from "../../metamask/web3";
 import { Address } from "../Address";
+import useCasinuFinance from "../../hooks/useCasinuFinance";
 
 
 const CustomButtom = () => {
+  const {updateAccount} = useCasinuFinance();
   const [walletAddress, setWalletAddress] = useState("");
-  const [walletBalance, setWalletBalance] = useState(0);
+
+   // @ts-ignore
+   window.ethereum.on("accountsChanged", async () => {
+    const wallets = await connectWallet();
+    if (wallets) {
+      updateAccount(wallets.address)
+    }
+  });
 
   const setWallet = async () => {
     const wallets = await connectWallet();
     if (wallets) {
+      //updateMetamaskConnection(true)
       setWalletAddress(wallets.address);
-      setWalletBalance(wallets.balance);
+      updateAccount(wallets.address)
     }
   };
   
@@ -26,7 +36,6 @@ const CustomButtom = () => {
         {walletAddress ? (
           <Address
             address={walletAddress}
-            balance={walletBalance}
             setWalletAddress={setWalletAddress}
           />
         ) : (

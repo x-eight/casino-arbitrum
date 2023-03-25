@@ -52,7 +52,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
         />
         <Flex flexDir="column" m={"0.5rem"}>
           <Text fontSize="1rem" color="#ffffff" >
-            {`${address.slice(0, 6)}...${address.slice(38, 43)}`}
+            {address?`${address.slice(0, 6)}...${address.slice(38, 43)}`:""}
           </Text>
         </Flex>
       </Flex>

@@ -29,7 +29,6 @@ const Sidebar = () => {
       setEthPrice(ethereum);
 
       const casinu = await getPriceCoingecko("casinu");
-      console.log("casinu",casinu)
       setCasinuPrice(casinu);
     };
     firstPlayers();
@@ -81,7 +80,7 @@ const Sidebar = () => {
           */}
           <NavItem
             id={2}
-            to={"/dashboard"}
+            to={"/"}
             name={"Dashboard"}
             navSize={navSize}
             isSelected={selectedButton === 2}

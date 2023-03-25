@@ -4,7 +4,7 @@ import config from "../config";
 
 const useBalanceEth = (token: string) => {
   const [balanceEth, setBalanceEth] = useState<number>(0);
-  const casinuFinance = useCasinuFinance();
+  const { casinuFinance } = useCasinuFinance();
 
   const fetchBalanceEth = useCallback(async () => {
     setBalanceEth(await casinuFinance.getPriceOfDollar(token));

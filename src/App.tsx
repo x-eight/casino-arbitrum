@@ -9,6 +9,7 @@ import {CasinuFinanceProvider} from "./casinu-provider";
 function App() {
   // <Flex w={"100%"}  flexDir="column" backgroundColor={"#142343"}  >
   return (
+
     <CasinuFinanceProvider>
       <Flex flexDir="row">
       <Sidebar />
@@ -27,6 +28,7 @@ function App() {
       </Flex>
     </Flex>
     </CasinuFinanceProvider>
+
   );
 }
 

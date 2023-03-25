@@ -4,11 +4,11 @@ import config from "../config";
 
 const useBalanceEth = () => {
   const [balanceEth, setBalanceEth] = useState<number>(0);
-  const casinuFinance = useCasinuFinance();
+  const { casinuFinance, account } = useCasinuFinance();
 
   const fetchBalanceEth = useCallback(async () => {
-    setBalanceEth(await casinuFinance.getEthBalance());
-  }, [casinuFinance]);
+    setBalanceEth(await casinuFinance.getEthBalance(account));
+  }, [casinuFinance, account]);
 
   useEffect(() => {
     fetchBalanceEth().catch((err) =>

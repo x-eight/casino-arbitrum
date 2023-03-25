@@ -7,12 +7,17 @@ import ERC20 from "../arbitrum-one/ERC20";
 
 const useTokenBalance = (token: ERC20) => {
   const [balance, setBalance] = useState(BigNumber.from(0));
-  const casinuFinance = useCasinuFinance();
-  const isUnlocked = casinuFinance?.isUnlocked;
+  const { casinuFinance, account } = useCasinuFinance();
+  const isUnlocked = !!account;
 
   const fetchBalance = useCallback(async () => {
-    setBalance(await token.balanceOf(casinuFinance?.myAccount ?? ""));
-  }, [token, casinuFinance?.myAccount]);
+    let balance = BigNumber.from(0);
+    if (account.length === 42) {
+      balance = await token.balanceOf(account);
+    }
+    setBalance(balance);
+  }, [account]);
+
   useEffect(() => {
     if (isUnlocked) {
       fetchBalance().catch((err) =>

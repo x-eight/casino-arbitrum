@@ -8,7 +8,8 @@ import useTokenBalance from "../../hooks/useTokenBalance";
 import { getDisplayBalance } from "../../metamask/formatBalance";
 
 const LpUnbinder = () => {
-  const casinuFinance = useCasinuFinance();
+  console.log("LpUnbinder :",LpUnbinder)
+  const {casinuFinance} = useCasinuFinance();
 
   const casinuBalance = useTokenBalance(casinuFinance.CASINU);
   const displayCasinuBalance = useMemo(() => getDisplayBalance(casinuBalance), [

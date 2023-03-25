@@ -2,8 +2,7 @@ import { useContext } from "react";
 import { Context } from "../casinu-provider";
 
 const useCasinuFinance = () => {
-  const { casinuFinance } = useContext(Context);
-  return casinuFinance;
+  return useContext(Context);
 };
 
 export default useCasinuFinance;

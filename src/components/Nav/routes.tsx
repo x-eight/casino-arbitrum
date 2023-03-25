@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Competition from '../../views/Competition';
 import Dashboard from '../../views/Dashboard';
 //import Home from '../../views/Home';
-import LpUnbinder from '../../views/lp-unbinder';
+//import LpUnbinder from '../../views/lp-unbinder';
 
 function AllRoutes() {
 
@@ -26,7 +26,7 @@ function AllRoutes() {
         />
         <Route
           path="/*"
-          element={<Competition />}
+          element={<>Not found</>}
         />
       </Routes>
     </>

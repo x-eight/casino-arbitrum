@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useContext } from "react";
 import {
   Button,
   useDisclosure,
@@ -14,23 +14,28 @@ import {
 } from "@chakra-ui/react";
 import { CopyIcon, CheckIcon } from "@chakra-ui/icons";
 import TokenSymbol from "../TokenSymbol";
+import useCasinuFinance from "../../hooks/useCasinuFinance";
+import useTokenBalance from "../../hooks/useTokenBalance";
 
 type Props = {
   //children: React.ReactNode;
   address: string;
-  balance: number;
   setWalletAddress: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const Address: React.FC<Props> = ({
   //children,
   address,
-  balance,
   setWalletAddress,
 }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const {account,updateAccount} = useCasinuFinance();
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { onCopy, setValue, hasCopied } = useClipboard("");
+
+  useEffect(() => {
+    console.log("Aaaa",account)
+  }, [account]);
 
   useEffect(() => {
     setValue(address);
@@ -38,7 +43,11 @@ export const Address: React.FC<Props> = ({
 
   const disconnect = async () => {
     // @ts-ignore
+    //const test = await window.ethereum.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] });
+    //updateMetamaskConnection(false)
+
     setWalletAddress("");
+    updateAccount("0x00")
   };
 
   return (
@@ -52,17 +61,16 @@ export const Address: React.FC<Props> = ({
         w="11rem"
         h="3rem"
       >
-        {`${address.slice(0, 6)} ... ${address.slice(38, 43)}`}
+        {address?`${address.slice(0, 6)} ... ${address.slice(38, 43)}`:""}
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalBody>
-            
             <Center flexDirection="column">
               <TokenSymbol symbol="CASINU" size="8rem" />
-              <Text fontWeight="bold">{`${address.slice(0, 6)} ... ${address.slice(38, 43)}`}</Text>
+              <Text fontWeight="bold">{address?`${address.slice(0, 6)} ... ${address.slice(38, 43)}`:""}</Text>
             </Center>
             <br />
             <Flex>
@@ -84,7 +92,6 @@ export const Address: React.FC<Props> = ({
                   </>
                 )}
               </Button>
-
               <Spacer />
               <Button onClick={() => disconnect()} w={["12vh", "15vh"]} h={50}>
                 Disconnect
