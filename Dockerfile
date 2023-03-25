@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Compilación del proyecto
-RUN npm build
+RUN npm run build
 
 # Instalar cualquier dependencia necesaria
 RUN npm install -g serve
