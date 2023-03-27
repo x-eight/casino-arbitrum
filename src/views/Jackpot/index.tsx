@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Flex, Text, Button, Grid, Box } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import { Flex, Text, Button, Box } from "@chakra-ui/react";
 
-import {
-  getJackpotstats,
-
-} from "../../service/api";
+import { getJackpotstats } from "../../service/api";
 import RecentPlayers from "../../components/Players/recents";
 import WinnerPlayers from "../../components/Players/winners";
+import Titles from "../../components/Players/components/titles";
 
-const Dashboard = () => {
-  const [isWinner, setList] = useState(true);
+const Jackpot = () => {
+  const [isWinner, setList] = useState(false);
 
   const [Jackpot, setJackpot] = useState({
     totalJackpot: 0,
@@ -28,18 +26,6 @@ const Dashboard = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  const [zoom, setZoom] = useState((window.devicePixelRatio*100<101?100.5:window.devicePixelRatio*100));
-
-  useEffect(() => {
-    const handleResize = () => {
-      const height = window.devicePixelRatio*100<101?100.5:window.devicePixelRatio*100
-      setZoom((height));
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [window.devicePixelRatio]);
 
   return (
     <Box >
@@ -113,23 +99,15 @@ const Dashboard = () => {
       </Flex>
 
       <Flex
-      h={zoom>105?`${zoom*0.88-27}vh`:`${zoom*0.88-19}vh`}
+      h="62vh"
         m={"0rem auto"}
         flexDir="column"
         w="80%"
         borderRadius="1rem"
         background="#252A34"
       >
-        <Text
-          color="#ffffff"
-          fontWeight="bold"
-          fontSize="3rem"
-          fontFamily="Tilt Neon"
-          p="0.5rem 2rem"
-        >
-          Players
-        </Text>
-    
+        <Titles />
+        <hr color="#1E1D2D" style={{ width: "100%" }} />
         <Flex  fontFamily="Tilt Neon" background="#1E232F">
           <Button
             variant="unstyled"
@@ -165,11 +143,11 @@ const Dashboard = () => {
             My Tickets
           </Button>
         </Flex>
-     
+        <hr color="#1E1D2D" style={{ width: "100%" }} />
         {isWinner ? <WinnerPlayers /> : <RecentPlayers />}
       </Flex>
     </Box>
   );
 };
 
-export default Dashboard;
+export default Jackpot;

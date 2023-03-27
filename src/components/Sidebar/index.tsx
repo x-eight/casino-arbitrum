@@ -57,7 +57,7 @@ const Sidebar = () => {
     },
     {
       id: 5,
-      to: "/competition",
+      to: "/TopPlayer",
       name: "Top Players",
       image: competition,
       redirect: "",
@@ -71,14 +71,14 @@ const Sidebar = () => {
       redirect: "",
       subIndices: [{
         id: 7,
-        to: "/competition",
+        to: "/games/jackpot",
         name: "Jackpot",
         image: nitro,
         redirect: "",
       },
       {
         id: 8,
-        to: "/competition",
+        to: "/games/minipot",
         name: "Minipot",
         image: competition,
         redirect: "",

@@ -1,7 +1,6 @@
 import React, { useEffect,useState } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import { getRecentwinnings } from "../../../service/api";
-import Titles from "../components/titles";
 import ListItem from "../components/list";
 import Loader from "../../Loader/Loader";
 
@@ -55,8 +54,6 @@ const WinnerPlayers: React.FC = () => {
   return (
     <Box w="100%" overflowY="auto" onScroll={onScroll}>
       <Flex flexWrap="wrap">
-        <Titles />
-        <hr color="#1E1D2D" style={{ width: "100%" }} />
         {loading ? (
           <Loader />
         ) : (

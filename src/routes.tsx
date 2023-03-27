@@ -1,9 +1,7 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import Competition from './views/Competition';
-import Dashboard from './views/Dashboard';
-//import Home from '../../views/Home';
-//import LpUnbinder from '../../views/lp-unbinder';
+import TopPlayer from './views/Top-players';
+import Jackpot from './views/Jackpot';
 
 function AllRoutes() {
 
@@ -13,16 +11,26 @@ function AllRoutes() {
         <Route
           path="/index.html"
           element={
-            <Competition />
+            <TopPlayer />
           }
         />
         <Route
-          path="/Competition"
-          element={<Competition />}
+          path="/"
+          element={
+            <TopPlayer />
+          }
         />
         <Route
-          path="/competition"
-          element={<Competition />}
+          path="/TopPlayer"
+          element={<TopPlayer />}
+        />
+        <Route
+          path="/games/jackpot"
+          element={<Jackpot />}
+        />
+        <Route
+          path="/games/minipot"
+          element={<Jackpot />}
         />
         <Route
           path="/*"

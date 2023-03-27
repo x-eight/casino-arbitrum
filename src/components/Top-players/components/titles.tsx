@@ -4,7 +4,7 @@ import { Text, Flex } from "@chakra-ui/react";
 
 const ColumTitles = () => {
     return (
-      <Flex w="100%" h="2rem" flexDir="row">
+      <Flex w="100%" h="2rem" flexDir="row" pr="1rem">
         <Flex w="10%" justifyContent="center"></Flex>
         <Flex w="70%" justifyContent="center">
           <Text color="#ffffff" fontWeight="bold">Player</Text>

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Grid } from "@chakra-ui/react";
 import CustomCard from "../../components/card";
 import InfoToken from "../../components/info-card";

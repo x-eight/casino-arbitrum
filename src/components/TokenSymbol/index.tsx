@@ -23,7 +23,7 @@ const logosBySymbol: { [title: string]: string } = {
   //IMAGE
   //=====================
   ARBITRUM: arbitrum,
-  Competition: competition,
+  TopPlayer: competition,
   Dashboard: dashboard,
   Home: home,
   "Nitro Pool": nitro,
