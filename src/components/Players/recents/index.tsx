@@ -16,7 +16,7 @@ interface PlayersParams {
 
 const RecentPlayers: React.FC = () => {
   let [loading, setLoading] = useState(true);
-  const [segmentNum, setSegmentNum] = useState(20);
+  const [segmentNum, setSegmentNum] = useState(15);
   const [hasMore, setHasMore] = useState(true);
   const [players, setPlayers] = useState<PlayersParams[]>([]);
 
@@ -34,7 +34,7 @@ const RecentPlayers: React.FC = () => {
       const totalPlayers = await getRecentplayers(seg);
       if(totalPlayers.length>0){
         setPlayers(players.concat(totalPlayers));
-        setSegmentNum((segmentNum) => segmentNum + 20);
+        setSegmentNum((segmentNum) => segmentNum + 15);
       }else{
         setHasMore(false)
       }
@@ -57,10 +57,6 @@ const RecentPlayers: React.FC = () => {
     <Box w="100%" overflowY="auto" onScroll={onScroll}>
       
       <Flex flexWrap="wrap">
-        {/*
-        <Titles />
-        <hr color="#1E1D2D" style={{ width: "100%" }} />
-        */}
         {loading ? (
           <Loader />
         ) : (

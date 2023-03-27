@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Box, Text, Flex, Avatar } from "@chakra-ui/react";
-import XImage from "../../../assets/x-symbol.png";
 
 interface UserListItemProps {
   address: string;
@@ -30,7 +29,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
   }, [address]);
 
   return (
-    <Flex w="100%" h="5rem" flexDir="row" key={index}>
+    <Flex w="100%" h="5rem" flexDir="row" key={index} background={index % 2 === 0 ? "#252A34" : "none"}>
       <Flex w="10%" justifyContent="center" alignItems="center">
         <Box color="#EEBA35">
           {index === 0 ? (
@@ -57,7 +56,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
         </Flex>
       </Flex>
       <Flex w="20%" justifyContent="center" alignItems="center">
-        <Text color="#ffffff">$ {amount.toFixed(2)}</Text>
+        <Text color="#EEBA35">$ {amount.toFixed(2)}</Text>
       </Flex>
     </Flex>
   );

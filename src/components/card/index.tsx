@@ -29,7 +29,7 @@ const CustomCard: React.FC<CustomCardProps> = ({
         </Text>
       </Flex>
 
-      <hr color="#EEBA35" />
+      {/* <hr color="#EEBA35" /> */}
       <Flex justifyContent="center" alignItems="center" height={hChildren}>
         {children}
       </Flex>

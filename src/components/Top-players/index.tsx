@@ -54,24 +54,17 @@ const TopList = () => {
   return (
     <Box w="100%" overflowY="auto" onScroll={onScroll}>
       <Flex flexWrap="wrap">
-        {/*
-        <Titles />
-        <hr color="#1E1D2D" style={{ width: "100%" }} />
-        */}
         {loading ? (
           <Loader />
         ) : (
           <>
             {players.map((p, index) => (
-          <>
             <PlayersListItem
             key={index}
             index={index}
             address={p.address}
             amount={p.amount}
           />
-          <hr color="#1E1D2D" style={{ margin:"auto auto", width: "95%" }} />
-          </>
         ))}
           </>
         )}

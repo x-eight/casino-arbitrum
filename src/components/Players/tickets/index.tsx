@@ -1,8 +1,9 @@
 import React, { useEffect,useState } from "react";
 import { Box, Flex } from "@chakra-ui/react";
-import { getRecentwinnings } from "../../../service/api";
+import { getMyTickets } from "../../../service/api";
 import ListItem from "../components/list";
 import Loader from "../../Loader/Loader";
+import useCasinuFinance from "../../../hooks/useCasinuFinance";
 
 interface PlayersParams {
   address: string;
@@ -13,14 +14,17 @@ interface PlayersParams {
   value?: number;
 }
 
-const WinnerPlayers: React.FC = () => {
+const TicketPlayers: React.FC = () => {
+
+  const { account } = useCasinuFinance();
+
   let [loading, setLoading] = useState(true);
   const [segmentNum, setSegmentNum] = useState(15);
   const [hasMore, setHasMore] = useState(true);
   const [winners, setWinners] = useState<PlayersParams[]>([])
   useEffect(() => {
     const firstPlayers = async () => {
-      const totalWinners = await getRecentwinnings(0);
+      const totalWinners = await getMyTickets(account,0);
       setLoading(false);
       setWinners(totalWinners);
 
@@ -28,9 +32,20 @@ const WinnerPlayers: React.FC = () => {
     firstPlayers();
   }, [])
 
+  useEffect(() => {
+    const firstPlayers = async () => {
+      const totalWinners = await getMyTickets(account,0);
+      setSegmentNum(15)
+      setLoading(false);
+      setWinners(totalWinners);
+
+    };
+    firstPlayers();
+  }, [account])
+
   const onSearchPositionFilter = async (seg: number) => {
     if (segmentNum != 0) {
-      const totalPlayers = await getRecentwinnings(seg);
+      const totalPlayers = await getMyTickets(account,seg);
       if(totalPlayers.length>0){
         setWinners(winners.concat(totalPlayers));
         setSegmentNum((segmentNum) => segmentNum + 15);
@@ -78,4 +93,4 @@ const WinnerPlayers: React.FC = () => {
   );
 };
 
-export default WinnerPlayers;
+export default TicketPlayers;

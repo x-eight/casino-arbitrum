@@ -92,7 +92,7 @@ const Sidebar = () => {
       w={navSize ? "3.5rem" : "12rem"}
       flexDir="column"
       justifyContent="space-between"
-      fontFamily="Tilt Neon"
+      fontFamily="Montserrat"
     >
       <Flex
         flexDir="column"

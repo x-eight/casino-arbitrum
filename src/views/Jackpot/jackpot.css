@@ -1,0 +1,23 @@
+.customHeight {
+    height: 450px;
+}
+
+@media only screen and (min-height: 1300px) {
+    .test {
+        height: 900px;
+    }
+}
+
+@media only screen and (min-height: 1060px) {
+    .test {
+        height: 800px;
+    }
+}
+
+/*
+@media only screen and (max-height: 600px) {
+    .test {
+        height: 450px;
+    }
+}
+*/

@@ -5,9 +5,11 @@ import { getJackpotstats } from "../../service/api";
 import RecentPlayers from "../../components/Players/recents";
 import WinnerPlayers from "../../components/Players/winners";
 import Titles from "../../components/Players/components/titles";
+import { SelectPlayers } from "./selectList";
+import "./jackpot.css"
 
 const Jackpot = () => {
-  const [isWinner, setList] = useState(false);
+  const [typePlayers, setTypePlayers] = useState(1);
 
   const [Jackpot, setJackpot] = useState({
     totalJackpot: 0,
@@ -40,10 +42,12 @@ const Jackpot = () => {
           background="#1E232F"
           borderRadius="1rem"
           w="30%"
+          h="7rem"
+          justifyContent="center"
+          alignItems="center"
         >
-          <Flex justifyContent="center" alignItems="center" height="2rem">
             <Text
-              fontFamily="Tilt Neon"
+              fontFamily="Montserrat"
               fontSize={["0.5rem","1rem","1rem","1.5rem","1.5rem"]}
               fontWeight={"bold"}
               color={"#ffffff"}
@@ -51,19 +55,14 @@ const Jackpot = () => {
             >
               Current Jackpot
             </Text>
-          </Flex>
-
-          <hr color="#EEBA35" />
-          <Flex justifyContent="center" alignItems="center" height="7rem">
             <Text
-              fontFamily="Tilt Neon"
+              fontFamily="Montserrat"
               fontWeight="bold"
               color="#EEBA35"
               fontSize="2rem"
             >
               ${Jackpot.totalJackpot}
             </Text>
-          </Flex>
         </Flex>
 
         <Flex
@@ -71,10 +70,12 @@ const Jackpot = () => {
           background="#1E232F"
           borderRadius="1rem"
           w="30%"
+          h="7rem"
+          justifyContent="center"
+          alignItems="center"
         >
-          <Flex justifyContent="center" alignItems="center" height="2rem">
             <Text
-              fontFamily="Tilt Neon"
+              fontFamily="Montserrat"
               fontSize={["0.5rem","1rem","1rem","1.5rem","1.5rem"]}
               fontWeight={"bold"}
               color={"#ffffff"}
@@ -82,24 +83,18 @@ const Jackpot = () => {
             >
               Next Jackpot
             </Text>
-          </Flex>
-
-          <hr color="#EEBA35" />
-          <Flex justifyContent="center" alignItems="center" height="7rem">
             <Text
-              fontFamily="Tilt Neon"
+              fontFamily="Montserrat"
               fontWeight="bold"
               color="#EEBA35"
               fontSize="2rem"
             >
               ${Jackpot.totalJackpot}
-            </Text>
-          </Flex>
+           </Text>
         </Flex>
-      </Flex>
-
+        </Flex>
       <Flex
-      h="62vh"
+        className="customHeight"
         m={"0rem auto"}
         flexDir="column"
         w="80%"
@@ -107,15 +102,15 @@ const Jackpot = () => {
         background="#252A34"
       >
         <Titles />
-        <hr color="#1E1D2D" style={{ width: "100%" }} />
-        <Flex  fontFamily="Tilt Neon" background="#1E232F">
+        {/* <hr color="#1E1D2D" style={{ width: "100%" }} /> */}
+        <Flex  fontFamily="Montserrat" background="#1E232F">
           <Button
             variant="unstyled"
             m="0rem 1rem"
-            color={isWinner ? "#ffffff" : "#EEBA35"}
+            color={typePlayers===1 ? "#EEBA35" : "#ffffff"}
             _hover={{ /*color: "#EEBA35" */}}
             onClick={() => {
-              setList(false);
+              setTypePlayers(1);
             }}
           >
             Recents
@@ -123,28 +118,27 @@ const Jackpot = () => {
           <Button
             variant="unstyled"
             m="0rem 1rem"
-            color={isWinner ? "#EEBA35" : "#ffffff"}
+            color={typePlayers===2 ? "#EEBA35" : "#ffffff"}
             _hover={{ /*color: "#EEBA35" */}}
             onClick={() => {
-              setList(true);
+              setTypePlayers(2);
             }}
           >
             Winners
           </Button>
           <Button
-            color="white"
             variant="unstyled"
             m="0rem 1rem"
-            isDisabled
+            color={typePlayers===3 ? "#EEBA35" : "#ffffff"}
+            _hover={{ /*color: "#EEBA35" */}}
             onClick={() => {
-              setList(false);
+              setTypePlayers(3);
             }}
           >
             My Tickets
           </Button>
         </Flex>
-        <hr color="#1E1D2D" style={{ width: "100%" }} />
-        {isWinner ? <WinnerPlayers /> : <RecentPlayers />}
+        {SelectPlayers(typePlayers)}
       </Flex>
     </Box>
   );

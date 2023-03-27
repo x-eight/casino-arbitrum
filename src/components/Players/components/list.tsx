@@ -23,12 +23,12 @@ const ListItem: React.FC<UserListItemProps> = ({
     <Flex
       w="100%"
       flexDir="row"
-      fontFamily="Tilt Neon"
+      fontFamily="Montserrat"
       fontSize={["0.9rem", "1.1rem"]}
       textAlign="center"
-      background={index % 2 !== 0 ? "#1E232F" : "index"}
+      background={index % 2 !== 0 ? "#1E232F" : "none"}
     >
-      <Flex w="30%" justifyContent="center" alignItems="center">
+      <Flex w="25%" pl="1rem" alignItems="center">
         <Text color="#ffffff">
           {address ? `${address.slice(0, 6)}...${address.slice(38, 43)}` : ""}
         </Text>
@@ -36,7 +36,7 @@ const ListItem: React.FC<UserListItemProps> = ({
       <Flex w="15%" justifyContent="center" alignItems="center">
         <Text color="#ffffff">{odds}%</Text>
       </Flex>
-      <Flex w="25%" justifyContent="center" alignItems="center">
+      <Flex w="30%" justifyContent="center !important" alignItems="center">
         <Text color="#ffffff">{created_at}</Text>
       </Flex>
       <Flex w="15%" justifyContent="center" alignItems="center">
@@ -50,7 +50,7 @@ const ListItem: React.FC<UserListItemProps> = ({
           </Box>
         </a>
       </Flex>
-      <Flex w="15%" justifyContent="center" alignItems="center">
+      <Flex w="15%" justifyContent="right" pr="1.5rem" alignItems="center">
         <Text color="#EEBA35">{`$ ${prize}`}</Text>
       </Flex>
     </Flex>

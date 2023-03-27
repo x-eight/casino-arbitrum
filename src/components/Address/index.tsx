@@ -54,8 +54,8 @@ export const Address: React.FC<Props> = ({
       <Button
         m="1vh"
         onClick={onOpen}
-        backgroundColor="transparent"
-        colorScheme="white"
+        _hover={{ color: "#EEBA35"}}
+        color="#ffffff"
         variant="outline"
         w="11rem"
         h="2.5rem"
@@ -65,18 +65,20 @@ export const Address: React.FC<Props> = ({
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent backgroundImage="radial-gradient(at 2rem 2rem ,rgb(41, 36, 31),rgb(7, 7, 7),rgb(133, 123, 123)) !important">
           <ModalBody>
-            <Center flexDirection="column">
+            <Center flexDirection="column" >
               <TokenSymbol symbol="CASINU" size="8rem" />
-              <Text fontWeight="bold">{address?`${address.slice(0, 6)} ... ${address.slice(38, 43)}`:""}</Text>
+              <Text color="#ffffff" fontWeight="bold">{address?`${address.slice(0, 6)} ... ${address.slice(38, 43)}`:""}</Text>
             </Center>
             <br />
-            <Flex>
+            <Flex color="#ffffff">
               <Button
                 onClick={onCopy}
                 flexDirection="column"
-                w={["12vh", "15vh"]}
+                _hover={{ color: "#EEBA35"}}
+                w={["12vh", "17vh"]}
+                background="#1E232F"
                 h={50}
               >
                 {!hasCopied ? (
@@ -92,7 +94,7 @@ export const Address: React.FC<Props> = ({
                 )}
               </Button>
               <Spacer />
-              <Button onClick={() => disconnect()} w={["12vh", "15vh"]} h={50}>
+              <Button background="#1E232F" _hover={{ color: "#EEBA35"}} onClick={() => disconnect()} w={["12vh", "17vh"]} h={50}>
                 Disconnect
               </Button>
             </Flex>

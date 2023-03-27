@@ -48,10 +48,8 @@ const [menuId, setMenuId] = useState(id);
       p="0.5rem"
       w={navSize ? "auto" : "11rem"}
       title={name}
-      borderRadius={"1rem"}
-      _hover={{ background: "#323140", color: "#EEBA35" }}
+      _hover={{ color: "#EEBA35" }}
       color={isSelected || (selectedButton ===menuId )? "#EEBA35" : "#ffffff"}
-      bg={isSelected || (selectedButton ===menuId )? "#3e3c52" : "#181A25"}
       >
         <Avatar size="sm" src={image} />
         <Flex ml={"1rem"} display={navSize ? "none" : "flex"}>

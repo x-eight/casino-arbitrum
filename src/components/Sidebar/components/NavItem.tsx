@@ -33,10 +33,9 @@ const NavItem: React.FC<NavItemProps> = ({
       title={name}
       id={`box${id}`}
       w={navSize ? "auto" : (width??"11rem")}
-      borderRadius={"1rem"}
-      _hover={{ background: "#323140", color: "#EEBA35" }}
+      _hover={{ color: "#EEBA35" }}
       color={isSelected ? "#EEBA35" : "#ffffff"}
-      bg={isSelected ? "#3e3c52" : "#181A25"}
+      bg="#181A25"
       onClick={clickEvent}
     >
       {!redirect ? (

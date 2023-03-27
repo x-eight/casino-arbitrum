@@ -33,7 +33,7 @@ const Header = () => {
   };
   
     return (
-    <Flex justifyContent="space-between" background="#252A34" fontFamily="Tilt Neon">
+    <Flex justifyContent="space-between" background="#252A34" fontFamily="Montserrat">
         <Flex m="0rem 1rem" alignItems="center">
         <TokenSymbol symbol="CASINU" size="3.5rem" />
               <Text color="#ffffff" size="sm">
