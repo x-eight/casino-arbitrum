@@ -13,12 +13,12 @@ function AllRoutes() {
         <Route
           path="/index.html"
           element={
-            <Dashboard />
+            <Competition />
           }
         />
         <Route
-          path="/"
-          element={<Dashboard />}
+          path="/Competition"
+          element={<Competition />}
         />
         <Route
           path="/competition"
