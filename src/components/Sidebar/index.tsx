@@ -46,7 +46,7 @@ const Sidebar = () => {
       redirect: `https://www.casinuarbitrum.xyz/`,
       subIndices: new Array<any>()
     },
-    { id: 2, to: "/", name: "Dashboard", image: dashboard, redirect: "",subIndices: new Array<any>() },
+    //{ id: 2, to: "/", name: "Dashboard", image: dashboard, redirect: "",subIndices: new Array<any>() },
     {
       id: 3,
       to: "/nitro-pool",
@@ -58,7 +58,7 @@ const Sidebar = () => {
     {
       id: 5,
       to: "/competition",
-      name: "Players",
+      name: "Top Players",
       image: competition,
       redirect: "",
       subIndices: new Array<any>()
@@ -89,7 +89,7 @@ const Sidebar = () => {
   return (
     <Flex
       backgroundColor={"#181A25"}
-      w={navSize ? "3.5rem" : "14rem"}
+      w={navSize ? "3.5rem" : "12rem"}
       flexDir="column"
       justifyContent="space-between"
       fontFamily="Tilt Neon"

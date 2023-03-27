@@ -24,10 +24,11 @@ const ListItem: React.FC<UserListItemProps> = ({
       w="100%"
       flexDir="row"
       fontFamily="Tilt Neon"
-      fontSize="1.4rem"
+      fontSize={["0.5rem","0.8rem","1rem","1.2rem"]}
+      textAlign="center"
       background={index % 2 === 0 ? "#1E232F" : "index"}
     >
-      <Flex w="35%" justifyContent="center" alignItems="center">
+      <Flex w="30%" justifyContent="center" alignItems="center">
         <Text color="#ffffff">
           {address ? `${address.slice(0, 6)}...${address.slice(38, 43)}` : ""}
         </Text>
@@ -35,7 +36,7 @@ const ListItem: React.FC<UserListItemProps> = ({
       <Flex w="15%" justifyContent="center" alignItems="center">
         <Text color="#ffffff">{odds}%</Text>
       </Flex>
-      <Flex w="20%" justifyContent="center" alignItems="center">
+      <Flex w="25%" justifyContent="center" alignItems="center">
         <Text color="#ffffff">{created_at}</Text>
       </Flex>
       <Flex w="15%" justifyContent="center" alignItems="center">

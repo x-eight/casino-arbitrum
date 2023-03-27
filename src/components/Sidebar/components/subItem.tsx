@@ -46,7 +46,7 @@ const [menuId, setMenuId] = useState(id);
       cursor="pointer"
       m={"0rem 0.8rem"}
       p="0.5rem"
-      w={navSize ? "auto" : "13rem"}
+      w={navSize ? "auto" : "11rem"}
       title={name}
       borderRadius={"1rem"}
       _hover={{ background: "#323140", color: "#EEBA35" }}
@@ -69,7 +69,7 @@ const [menuId, setMenuId] = useState(id);
               navSize={navSize}
               isSelected={selectedButton === n.id}
               clickEvent={() => handleButtonClick(n.id)}
-              width="12rem"
+              width="9rem"
             />
           ))}
         </Flex>

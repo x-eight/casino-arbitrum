@@ -45,25 +45,20 @@ const Dashboard = () => {
     <Box >
       <Flex
         h="auto"
-        p="1vh"
+        p="4vh"
         justifyContent="space-evenly"
         alignItems="center"
       >
         <Flex
           flexDir="column"
-          backgroundColor="transparent"
-          borderRadius={"1rem"}
-          style={{
-            backgroundColor: "rgba(0,0,0,.7)",
-            width: "20%",
-            height: "auto",
-            content: "none",
-          }}
+          background="#1E232F"
+          borderRadius="1rem"
+          w="30%"
         >
-          <Flex justifyContent="center" alignItems="center" height="4rem">
+          <Flex justifyContent="center" alignItems="center" height="2rem">
             <Text
               fontFamily="Tilt Neon"
-              fontSize={["1rem","1rem","1rem","1.5rem","2rem"]}
+              fontSize={["0.5rem","1rem","1rem","1.5rem","1.5rem"]}
               fontWeight={"bold"}
               color={"#ffffff"}
               textAlign="center"
@@ -73,12 +68,12 @@ const Dashboard = () => {
           </Flex>
 
           <hr color="#EEBA35" />
-          <Flex justifyContent="center" alignItems="center" height="8.5rem">
+          <Flex justifyContent="center" alignItems="center" height="7rem">
             <Text
               fontFamily="Tilt Neon"
               fontWeight="bold"
               color="#EEBA35"
-              fontSize="3rem"
+              fontSize="2rem"
             >
               ${Jackpot.totalJackpot}
             </Text>
@@ -87,19 +82,14 @@ const Dashboard = () => {
 
         <Flex
           flexDir="column"
-          backgroundColor="transparent"
-          borderRadius={"1rem"}
-          style={{
-            backgroundColor: "rgba(0,0,0,.7)",
-            width: "20%",
-            height: "auto",
-            content: "none",
-          }}
+          background="#1E232F"
+          borderRadius="1rem"
+          w="30%"
         >
-          <Flex justifyContent="center" alignItems="center" height="4rem">
+          <Flex justifyContent="center" alignItems="center" height="2rem">
             <Text
               fontFamily="Tilt Neon"
-              fontSize={["1rem","1rem","1rem","1.5rem","2rem"]}
+              fontSize={["0.5rem","1rem","1rem","1.5rem","1.5rem"]}
               fontWeight={"bold"}
               color={"#ffffff"}
               textAlign="center"
@@ -109,12 +99,12 @@ const Dashboard = () => {
           </Flex>
 
           <hr color="#EEBA35" />
-          <Flex justifyContent="center" alignItems="center" height="8.5rem">
+          <Flex justifyContent="center" alignItems="center" height="7rem">
             <Text
               fontFamily="Tilt Neon"
               fontWeight="bold"
               color="#EEBA35"
-              fontSize="3rem"
+              fontSize="2rem"
             >
               ${Jackpot.totalJackpot}
             </Text>
@@ -135,18 +125,17 @@ const Dashboard = () => {
           fontWeight="bold"
           fontSize="3rem"
           fontFamily="Tilt Neon"
-          p="1rem 2rem"
+          p="0.5rem 2rem"
         >
           Players
         </Text>
-        <Text color="#ffffff" fontFamily="Tilt Neon" p="1rem 2rem">
-          Date : 2023-03-17 06:00 PM UTC - 2023-03-24 06:00 PM UTC
-        </Text>
-        <Flex p="1rem 2rem" fontFamily="Tilt Neon">
+    
+        <Flex  fontFamily="Tilt Neon" background="#1E232F">
           <Button
-            colorScheme="teal"
-            variant="outline"
+            variant="unstyled"
             m="0rem 1rem"
+            color={isWinner ? "#ffffff" : "#EEBA35"}
+            _hover={{ /*color: "#EEBA35" */}}
             onClick={() => {
               setList(false);
             }}
@@ -154,9 +143,10 @@ const Dashboard = () => {
             Recents
           </Button>
           <Button
-            colorScheme="teal"
-            variant="outline"
+            variant="unstyled"
             m="0rem 1rem"
+            color={isWinner ? "#EEBA35" : "#ffffff"}
+            _hover={{ /*color: "#EEBA35" */}}
             onClick={() => {
               setList(true);
             }}
@@ -164,8 +154,8 @@ const Dashboard = () => {
             Winners
           </Button>
           <Button
-            colorScheme="teal"
-            variant="outline"
+            color="white"
+            variant="unstyled"
             m="0rem 1rem"
             isDisabled
             onClick={() => {
@@ -175,6 +165,7 @@ const Dashboard = () => {
             My Tickets
           </Button>
         </Flex>
+     
         {isWinner ? <WinnerPlayers /> : <RecentPlayers />}
       </Flex>
     </Box>
