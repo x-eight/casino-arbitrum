@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState } from "react";
 import {
     Button,
     Flex,
@@ -9,7 +9,7 @@ import { Address } from "../Address";
 import useCasinuFinance from "../../hooks/useCasinuFinance";
 
 
-const CustomButtom = () => {
+const Header = () => {
   const {updateAccount} = useCasinuFinance();
   const [walletAddress, setWalletAddress] = useState("");
 
@@ -31,7 +31,7 @@ const CustomButtom = () => {
   };
   
     return (
-    <Flex w={"100%"} m="0.5rem 0rem" >
+    <Flex background="#252A34" fontFamily="Tilt Neon">
         <Spacer />
         {walletAddress ? (
           <Address
@@ -41,10 +41,9 @@ const CustomButtom = () => {
         ) : (
           <Button
             m="1vh"
-            backgroundColor="#854b19"
+            backgroundColor="#EEBA35"
             colorScheme="white"
             w="11rem"
-            h="3rem"
             fontWeight="bold"
             color="white"
             onClick={() => setWallet()}
@@ -56,4 +55,4 @@ const CustomButtom = () => {
   );
 };
 
-export default CustomButtom;
+export default Header;

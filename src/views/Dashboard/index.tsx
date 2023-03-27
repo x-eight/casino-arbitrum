@@ -4,7 +4,8 @@ import {
   Text,
   Code,
   Grid,
-  Box
+  Box,
+  Center
 } from "@chakra-ui/react";
 import CustomCard from "../../components/card";
 import InfoToken from "../../components/info-card";
@@ -62,11 +63,13 @@ const Dashboard = () => {
       templateRows="11.5rem 13rem 11.5rem 25rem"
       gap={4}
     >
+      <Center>
       <CustomCard title="Total Jackpot Distributed">
-        <Text fontWeight="bold" color={"#854b19"} fontSize="3rem">
+        <Text fontWeight="bold" color={"#EEBA35"} fontSize="3rem">
           ${Jackpot.totalJackpot}
         </Text>
       </CustomCard>
+      </Center>
 
       <CustomCard title="Total Players">
         <Flex flexDir="column" alignItems="center" m="0.5rem">
@@ -113,7 +116,7 @@ const Dashboard = () => {
       </CustomCard>
 
       <CustomCard title="Your Jackpot winnings">
-        <Text fontWeight="bold" color={"#854b19"} fontSize="3rem">
+        <Text fontWeight="bold" color={"#EEBA35"} fontSize="3rem">
           $0.00
         </Text>
       </CustomCard>

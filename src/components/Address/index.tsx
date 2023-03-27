@@ -15,7 +15,6 @@ import {
 import { CopyIcon, CheckIcon } from "@chakra-ui/icons";
 import TokenSymbol from "../TokenSymbol";
 import useCasinuFinance from "../../hooks/useCasinuFinance";
-import useTokenBalance from "../../hooks/useTokenBalance";
 
 type Props = {
   //children: React.ReactNode;
@@ -59,7 +58,7 @@ export const Address: React.FC<Props> = ({
         colorScheme="white"
         variant="outline"
         w="11rem"
-        h="3rem"
+        h="2.5rem"
       >
         {address?`${address.slice(0, 6)} ... ${address.slice(38, 43)}`:""}
       </Button>

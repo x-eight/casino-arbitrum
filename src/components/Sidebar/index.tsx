@@ -1,16 +1,17 @@
-import React, { useState,useEffect } from "react";
-import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
-  Img,
-} from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { Box, Flex, Text, IconButton, Img } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import BuyImage from "../../assets/buy.svg";
 import NavItem from "./components/NavItem";
 import TokenSymbol from "../TokenSymbol";
 import { getPriceCoingecko } from "../../service/api";
+
+//===========IMAGE==========//
+import home from "../../assets/home.svg";
+import competition from "../../assets/competition.svg";
+import nitro from "../../assets/nitro.svg";
+import dashboard from "../../assets/dashboard.png";
+//=========================//
 
 const Sidebar = () => {
   const [navSize, changeNavSize] = useState(false);
@@ -19,7 +20,7 @@ const Sidebar = () => {
   const handleButtonClick = (color: number) => {
     setSelectedButton(color);
   };
-  
+
   const [CasinuPrice, setCasinuPrice] = useState(0);
   const [EthPrice, setEthPrice] = useState(0);
 
@@ -34,14 +35,38 @@ const Sidebar = () => {
     firstPlayers();
   }, []);
 
+  const elements = [
+    {
+      id: 1,
+      to: "/",
+      name: "Home",
+      image: home,
+      redirect: `https://www.casinuarbitrum.xyz/`,
+    },
+    { id: 2, to: "/", name: "Dashboard", image: dashboard, redirect: "" },
+    {
+      id: 3,
+      to: "/nitro-pool",
+      name: "Nitro Pool",
+      image: nitro,
+      redirect: `https://app.camelot.exchange/nitro/0x761Adb257558eBebE97d65AD7aCe5DDd4d06e83d`,
+    },
+    {
+      id: 5,
+      to: "/competition",
+      name: "Players",
+      image: competition,
+      redirect: "",
+    },
+  ];
 
   return (
     <Flex
-      backgroundColor={"#1e1f21"}
-      h="62rem"
+      backgroundColor={"#181A25"}
       w={navSize ? "3.5rem" : "14rem"}
       flexDir="column"
       justifyContent="space-between"
+      fontFamily="Tilt Neon"
     >
       <Flex
         flexDir="column"
@@ -51,7 +76,7 @@ const Sidebar = () => {
         <IconButton
           aria-label="Search database"
           p={"1rem"}
-          _hover={{ background: "none" }}
+          background="none"
           icon={<HamburgerIcon />}
           onClick={() => {
             if (navSize) changeNavSize(false);
@@ -68,50 +93,18 @@ const Sidebar = () => {
         </Box>
 
         <Flex alignSelf={"center"} flexDir="column">
-          <NavItem
-            id={1}
-            to={"/"}
-            name={"Home"}
-            navSize={navSize}
-            redirect={`https://www.casinuarbitrum.xyz/`}
-            isSelected={selectedButton === 1}
-            clickEvent={() => handleButtonClick(1)}
-          />
-          <NavItem
-            id={2}
-            to={"/"}
-            name={"Dashboard"}
-            navSize={navSize}
-            isSelected={selectedButton === 2}
-            clickEvent={() => handleButtonClick(2)}
-          />
-          <NavItem
-            id={3}
-            to={"/nitro-pool"}
-            name={"Nitro Pool"}
-            navSize={navSize}
-            redirect={`https://app.camelot.exchange/nitro/0x761Adb257558eBebE97d65AD7aCe5DDd4d06e83d`}
-            isSelected={selectedButton === 3}
-            clickEvent={() => handleButtonClick(3)}
-          />
-          {/*
-          <NavItem
-            id={4}
-            to={"/lp-unbinder"}
-            name={"LP unbinder"}
-            navSize={navSize}
-            isSelected={selectedButton === 4}
-            clickEvent={() => handleButtonClick(4)}
-          />
-          */}
-          <NavItem
-            id={5}
-            to={"/competition"}
-            name={"Competition"}
-            navSize={navSize}
-            isSelected={selectedButton === 5}
-            clickEvent={() => handleButtonClick(5)}
-          />
+          {elements.map((n, i) => (
+            <NavItem
+              id={i}
+              to={n.to}
+              name={n.name}
+              image={n.image}
+              navSize={navSize}
+              redirect={n.redirect}
+              isSelected={selectedButton === i}
+              clickEvent={() => handleButtonClick(i)}
+            />
+          ))}
         </Flex>
       </Flex>
 
@@ -130,7 +123,7 @@ const Sidebar = () => {
               <Flex
                 w="3rem"
                 h="3rem"
-                backgroundColor="#854b19"
+                backgroundColor="#EEBA35"
                 borderRadius="2.5rem"
                 justifyContent="center"
                 alignItems="center"
@@ -140,7 +133,7 @@ const Sidebar = () => {
             ) : (
               <Flex
                 borderRadius="3rem"
-                backgroundColor="#854b19"
+                backgroundColor="#EEBA35"
                 w="9rem"
                 h="2.5rem"
                 justifyContent="center"
@@ -157,11 +150,11 @@ const Sidebar = () => {
               w="7rem"
               m="0.5rem"
               alignItems="center"
-              justifyContent="space-between"
+              justifyContent="space-evenly"
             >
               <TokenSymbol symbol="CASINU" size="2.5rem" />
               <Text color="#ffffff" size="sm">
-              ${CasinuPrice.toFixed(2)}
+                ${CasinuPrice.toFixed(2)}
               </Text>
             </Flex>
             <Flex

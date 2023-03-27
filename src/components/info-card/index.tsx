@@ -49,7 +49,7 @@ const InfoToken: React.FC<InfoTokenProps> = ({
           <Text fontSize={"1.5vh"} textAlign="center" color={"#ffffff"} >
             {token}
           </Text>
-          <Text fontWeight={"bold"} color="#854b19">
+          <Text fontWeight={"bold"} color="#EEBA35">
             {average}
           </Text>
           <Text fontSize={"1.5vh"} color={"#ffffff"}>

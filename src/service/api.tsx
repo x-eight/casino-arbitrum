@@ -47,6 +47,7 @@ export async function getRecentplayers(
         chance: p.odds,
         tx: p.buy_tx_hash,
         avatar: "",
+        value: p.prize_amount,
         created_at: `${dateString} ${timeString}`,
       };
     });

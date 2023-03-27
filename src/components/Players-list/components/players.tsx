@@ -73,7 +73,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Box w="1.5rem" color="#854b19">
+            <Box w="1.5rem" color="#EEBA35">
               <TokenSymbol symbol="ARBITRUM" size="3.5rem" width={"3.5rem"} />
             </Box>
           </a>

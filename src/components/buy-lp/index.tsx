@@ -31,7 +31,7 @@ const BuyLp: React.FC<BuyLpProps> = ({ title, token, average, value }) => {
         w="100%"
       />
       <Text color="#ffffff" fontSize="1rem" alignSelf="flex-end">Balance :
-        <span style={{color:"#854b19",fontWeight:"bold"}}>
+        <span style={{color:"#EEBA35",fontWeight:"bold"}}>
             {` ${"0.00"} CASINU-WETH LP`}
         </span>
       </Text>
@@ -45,7 +45,7 @@ const BuyLp: React.FC<BuyLpProps> = ({ title, token, average, value }) => {
       >
         $0.00
       </Code>
-      <Button backgroundColor="#854b19" size="sm" w="100%" mt="0.5rem">
+      <Button backgroundColor="#EEBA35" size="sm" w="100%" mt="0.5rem">
         Approve
       </Button>
     </Flex>

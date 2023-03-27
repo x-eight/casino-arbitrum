@@ -24,12 +24,12 @@ const CustomCard: React.FC<CustomCardProps> = ({
       }}
     >
       <Flex justifyContent="center" alignItems="center" height="3rem">
-        <Text fontWeight={"bold"} color={"#ffffff"}>
+        <Text fontFamily="Haas Grot Text R Web" fontWeight={"bold"} color={"#ffffff"}>
           {title}
         </Text>
       </Flex>
 
-      <hr color="#854b19" />
+      <hr color="#EEBA35" />
       <Flex justifyContent="center" alignItems="center" height={hChildren}>
         {children}
       </Flex>

@@ -32,7 +32,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
   return (
     <Flex w="100%" h="5rem" flexDir="row" key={index}>
       <Flex w="10%" justifyContent="center" alignItems="center">
-        <Box color="#854b19">
+        <Box color="#EEBA35">
           {index === 0 ? (
             <>🥇</>
           ) : index === 1 ? (
