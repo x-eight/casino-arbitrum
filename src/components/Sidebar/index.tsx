@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Box, Flex, Text, IconButton, Img } from "@chakra-ui/react";
+import { Button,VStack,Box, Flex, Text, IconButton, Img,Avatar } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import BuyImage from "../../assets/buy.svg";
 import NavItem from "./components/NavItem";
+import GroupItems from "./components/subItem";
 import TokenSymbol from "../TokenSymbol";
 import { getPriceCoingecko } from "../../service/api";
 
@@ -42,14 +44,16 @@ const Sidebar = () => {
       name: "Home",
       image: home,
       redirect: `https://www.casinuarbitrum.xyz/`,
+      subIndices: new Array<any>()
     },
-    { id: 2, to: "/", name: "Dashboard", image: dashboard, redirect: "" },
+    { id: 2, to: "/", name: "Dashboard", image: dashboard, redirect: "",subIndices: new Array<any>() },
     {
       id: 3,
       to: "/nitro-pool",
       name: "Nitro Pool",
       image: nitro,
       redirect: `https://app.camelot.exchange/nitro/0x761Adb257558eBebE97d65AD7aCe5DDd4d06e83d`,
+      subIndices: new Array<any>()
     },
     {
       id: 5,
@@ -57,6 +61,28 @@ const Sidebar = () => {
       name: "Players",
       image: competition,
       redirect: "",
+      subIndices: new Array<any>()
+    },
+    {
+      id: 6,
+      to: "",
+      name: "Games",
+      image: competition,
+      redirect: "",
+      subIndices: [{
+        id: 7,
+        to: "/competition",
+        name: "Jackpot",
+        image: nitro,
+        redirect: "",
+      },
+      {
+        id: 8,
+        to: "/competition",
+        name: "Minipot",
+        image: competition,
+        redirect: "",
+      }]
     },
   ];
 
@@ -84,27 +110,30 @@ const Sidebar = () => {
           }}
         />
 
-        <Box
-          alignSelf={"center"}
-          display={navSize ? "none" : "flex"}
-          m={"1rem 0.5rem"}
-        >
-          <TokenSymbol symbol="CASINU" size="10rem" />
-        </Box>
-
-        <Flex alignSelf={"center"} flexDir="column">
-          {elements.map((n, i) => (
+        <Flex alignSelf="center" flexDir="column">
+          {elements.map((n, i) => (n.subIndices.length>0?(
+            <GroupItems
+            id={i}
+            name={n.name}
+            image={n.image}
+            navSize={navSize}
+            selectedButton={selectedButton}
+            isSelected={selectedButton === i}
+            setSelectedButton={setSelectedButton}
+            subIndices={n.subIndices}
+          />
+          ):(
             <NavItem
-              id={i}
-              to={n.to}
-              name={n.name}
-              image={n.image}
-              navSize={navSize}
-              redirect={n.redirect}
-              isSelected={selectedButton === i}
-              clickEvent={() => handleButtonClick(i)}
-            />
-          ))}
+            id={i}
+            to={n.to}
+            name={n.name}
+            image={n.image}
+            navSize={navSize}
+            redirect={n.redirect}
+            isSelected={selectedButton === i}
+            clickEvent={() => handleButtonClick(i)}
+          />
+          )))}
         </Flex>
       </Flex>
 

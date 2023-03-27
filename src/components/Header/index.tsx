@@ -3,10 +3,12 @@ import {
     Button,
     Flex,
     Spacer,
+    Text,
   } from "@chakra-ui/react";
 import { connectWallet } from "../../metamask/web3";
 import { Address } from "../Address";
 import useCasinuFinance from "../../hooks/useCasinuFinance";
+import TokenSymbol from "../TokenSymbol";
 
 
 const Header = () => {
@@ -31,8 +33,14 @@ const Header = () => {
   };
   
     return (
-    <Flex background="#252A34" fontFamily="Tilt Neon">
-        <Spacer />
+    <Flex justifyContent="space-between" background="#252A34" fontFamily="Tilt Neon">
+        <Flex m="0rem 1rem" alignItems="center">
+        <TokenSymbol symbol="CASINU" size="3.5rem" />
+              <Text color="#ffffff" size="sm">
+                CASINU
+              </Text>
+        </Flex>
+       
         {walletAddress ? (
           <Address
             address={walletAddress}

@@ -9,9 +9,7 @@ import {
 } from "@chakra-ui/react";
 import CustomCard from "../../components/card";
 import InfoToken from "../../components/info-card";
-import CustomList from "../../components/Players-list";
 import { getJackpotstats, getPriceCoingecko } from "../../service/api";
-import WinnerList from "../../components/Winner-list";
 import useCasinuFinance from "../../hooks/useCasinuFinance";
 import useTokenBalance from "../../hooks/useTokenBalance";
 import { getDisplayBalance } from "../../metamask/formatBalance";
@@ -119,12 +117,6 @@ const Dashboard = () => {
         <Text fontWeight="bold" color={"#EEBA35"} fontSize="3rem">
           $0.00
         </Text>
-      </CustomCard>
-      <CustomCard title="Recent Players" hChildren="22rem">
-        <CustomList />
-      </CustomCard>
-      <CustomCard title="Recent Winners" hChildren="22rem">
-        <WinnerList />
       </CustomCard>
     </Grid>
     </Box>

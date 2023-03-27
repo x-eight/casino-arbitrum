@@ -26,7 +26,6 @@ const ListItem: React.FC<UserListItemProps> = ({
       fontFamily="Tilt Neon"
       fontSize="1.4rem"
       background={index % 2 === 0 ? "#1E232F" : "index"}
-      pr="1rem"
     >
       <Flex w="35%" justifyContent="center" alignItems="center">
         <Text color="#ffffff">

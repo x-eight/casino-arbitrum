@@ -1,19 +1,10 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { Flex, Text, Button, Grid, Box } from "@chakra-ui/react";
-import CustomCard from "../../components/card";
-import InfoToken from "../../components/info-card";
-import CustomList from "../../components/Players-list";
+
 import {
   getJackpotstats,
-  getPriceCoingecko,
-  getRecentwinnings,
+
 } from "../../service/api";
-import WinnerList from "../../components/Winner-list";
-import useCasinuFinance from "../../hooks/useCasinuFinance";
-import useTokenBalance from "../../hooks/useTokenBalance";
-import { getDisplayBalance } from "../../metamask/formatBalance";
-import useBalanceEth from "../../hooks/useBalanceEth";
-import TopList from "../../components/Top-list";
 import RecentPlayers from "../../components/Players/recents";
 import WinnerPlayers from "../../components/Players/winners";
 
@@ -135,7 +126,7 @@ const Dashboard = () => {
       h={zoom>105?`${zoom*0.88-27}vh`:`${zoom*0.88-19}vh`}
         m={"0rem auto"}
         flexDir="column"
-        w="99%"
+        w="80%"
         borderRadius="1rem"
         background="#252A34"
       >

@@ -5,7 +5,7 @@ import { Text, Flex } from "@chakra-ui/react";
 const Titles = () => {
 
     return (
-      <Flex w="100%" flexDir="row" fontSize="1.5rem" fontFamily="Tilt Neon" m="1rem">
+      <Flex w="100%" flexDir="row" fontSize="1.5rem" fontFamily="Tilt Neon" m="1rem 0rem">
         <Flex w="35%" justifyContent="center">
           <Text color="#ffffff">Player</Text>
         </Flex>

@@ -8,10 +8,11 @@ interface NavItemProps {
   to: string;
   name: string;
   image?: string;
-  isSelected: any;
+  isSelected: boolean;
   clickEvent: (color: any) => void;
   redirect?: string;
-  //setRandom: React.Dispatch<React.SetStateAction<number>>;
+  width?:string
+  setShowSubmenu?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const NavItem: React.FC<NavItemProps> = ({
@@ -23,14 +24,15 @@ const NavItem: React.FC<NavItemProps> = ({
   isSelected,
   clickEvent,
   redirect,
+  width,
 }) => {
   return (
     <Box
-      m={"0rem 0.8rem"}
+      m={"0rem auto"}
       p="0.5rem"
       title={name}
       id={`box${id}`}
-      w={navSize ? "auto" : "13rem"}
+      w={navSize ? "auto" : (width??"13rem")}
       borderRadius={"1rem"}
       _hover={{ background: "#323140", color: "#EEBA35" }}
       color={isSelected ? "#EEBA35" : "#ffffff"}
