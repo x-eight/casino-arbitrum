@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Box, Divider, Flex } from "@chakra-ui/react";
-import Titles from "../components/titles";
+import { Box, Flex } from "@chakra-ui/react";
 import ListItem from "../components/list";
 import { getRecentplayers } from "../../../service/api";
 import Loader from "../../Loader/Loader";
+
+interface listProps {
+  skip:number
+}
 
 interface PlayersParams {
   address: string;
@@ -14,7 +17,7 @@ interface PlayersParams {
   value?: number;
 }
 
-const RecentPlayers: React.FC = () => {
+const RecentPlayers: React.FC<listProps> = ({skip}) => {
   let [loading, setLoading] = useState(true);
   const [segmentNum, setSegmentNum] = useState(6);
   const [hasMore, setHasMore] = useState(true);
@@ -41,16 +44,13 @@ const RecentPlayers: React.FC = () => {
     }
   };
 
-  const onScroll = (event: any) => {
-    const element = event.target;
-    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-      if (hasMore) {
-        onSearchPositionFilter(segmentNum)
-      }else{
-        console.log('this is tha last');
-      }
+  useEffect(() => {
+    if (hasMore) {
+      onSearchPositionFilter(segmentNum)
+    }else{
+      console.log('this is tha last');
     }
-  };
+  }, [skip]);
 
 
   return (

@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Box, Flex, Text, Avatar, Button, VStack } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Flex, Text, Avatar} from "@chakra-ui/react";
 import NavItem from "./NavItem";
 
 interface GroupItemsProps {
+  index: number;
   id: number;
   navSize: boolean;
   name: string;
@@ -16,7 +16,8 @@ interface GroupItemsProps {
 }
 
 const GroupItems: React.FC<GroupItemsProps> = ({
-id,
+  index,
+  id,
   name,
   image,
   navSize,
@@ -39,6 +40,7 @@ const [menuId, setMenuId] = useState(id);
 
   return (
     <Box
+      key={index}
       title={name}
     >
       <Flex onClick={handleToggleSubmenu} 
@@ -61,6 +63,7 @@ const [menuId, setMenuId] = useState(id);
         <Flex alignSelf="end" flexDir="column">
           {subIndices.map((n, i) => (
             <NavItem
+              index={n.id}
               id={n.id}
               to={n.to}
               name={n.name}

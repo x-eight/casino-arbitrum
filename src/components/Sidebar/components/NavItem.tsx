@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Box, Flex, Text, Avatar } from "@chakra-ui/react";
 
 interface NavItemProps {
+  index: number;
   id: number;
   navSize: boolean;
   to: string;
@@ -16,6 +17,7 @@ interface NavItemProps {
 }
 
 const NavItem: React.FC<NavItemProps> = ({
+  index,
   id,
   to,
   name,
@@ -28,6 +30,7 @@ const NavItem: React.FC<NavItemProps> = ({
 }) => {
   return (
     <Box
+      key={index}
       m={"0rem auto"}
       p="0.5rem"
       title={name}

@@ -113,6 +113,8 @@ const Sidebar = () => {
         <Flex alignSelf="center" flexDir="column">
           {elements.map((n, i) => (n.subIndices.length>0?(
             <GroupItems
+            index={n.id}
+            key={i}
             id={i}
             name={n.name}
             image={n.image}
@@ -124,6 +126,7 @@ const Sidebar = () => {
           />
           ):(
             <NavItem
+            index={n.id}
             id={i}
             to={n.to}
             name={n.name}

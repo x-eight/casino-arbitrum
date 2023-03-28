@@ -7,9 +7,11 @@ import { SelectPlayers } from "./selectList";
 import "./jackpot.css";
 import Filter from "../../components/Players/components/filter";
 
-const ph="1.5rem"
+const ph = "1.5rem";
 
 const Jackpot = () => {
+  const [skip, setSetSkip] = useState(0); //1->next  2->preview
+  const [hasMore, setHasMore] = useState(true);
   const [typePlayers, setTypePlayers] = useState(1);
 
   const [Jackpot, setJackpot] = useState({
@@ -29,6 +31,10 @@ const Jackpot = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    console.log("skip :", skip);
+  }, [skip]);
 
   return (
     <Box>
@@ -99,11 +105,19 @@ const Jackpot = () => {
         background="#252A34"
         borderTop="4px solid #252A3f"
       >
-        <Titles ph={ph}/>
-        <Divider backgroundColor="#17181c"/>
-        <Filter ph={ph} typePlayers={typePlayers} setTypePlayers={setTypePlayers} />
-        <Divider backgroundColor="#17181c"/>
-        {SelectPlayers(typePlayers)}
+        <Titles ph={ph} />
+        <Divider backgroundColor="#17181c" />
+        <Filter
+          ph={ph}
+          typePlayers={typePlayers}
+          setTypePlayers={setTypePlayers}
+          skip={skip}
+          setSetSkip={setSetSkip}
+          hasMore={hasMore}
+          setHasMore={setHasMore}
+        />
+        <Divider backgroundColor="#17181c" />
+        {SelectPlayers(typePlayers, skip, setSetSkip, hasMore, setHasMore)}
       </Flex>
     </Box>
   );

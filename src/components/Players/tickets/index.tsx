@@ -5,6 +5,10 @@ import ListItem from "../components/list";
 import Loader from "../../Loader/Loader";
 import useCasinuFinance from "../../../hooks/useCasinuFinance";
 
+interface listProps {
+  skip:number
+}
+
 interface PlayersParams {
   address: string;
   created_at: string;
@@ -14,7 +18,7 @@ interface PlayersParams {
   value?: number;
 }
 
-const TicketPlayers: React.FC = () => {
+const TicketPlayers: React.FC<listProps> = ({skip}) => {
 
   const { account } = useCasinuFinance();
 
