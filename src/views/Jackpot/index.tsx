@@ -102,8 +102,7 @@ const Jackpot = () => {
         background="#252A34"
       >
         <Titles />
-        {/* <hr color="#1E1D2D" style={{ width: "100%" }} /> */}
-        <Flex  fontFamily="Montserrat" background="#1E232F">
+        <Flex fontFamily="Montserrat" background="#1E232F" p="0.5rem 2rem">
           <Button
             variant="unstyled"
             m="0rem 1rem"
@@ -112,6 +111,7 @@ const Jackpot = () => {
             onClick={() => {
               setTypePlayers(1);
             }}
+            fontSize="0.9rem" 
           >
             Recents
           </Button>
@@ -123,6 +123,7 @@ const Jackpot = () => {
             onClick={() => {
               setTypePlayers(2);
             }}
+            fontSize="0.9rem"
           >
             Winners
           </Button>
@@ -134,6 +135,7 @@ const Jackpot = () => {
             onClick={() => {
               setTypePlayers(3);
             }}
+            fontSize="0.9rem"
           >
             My Tickets
           </Button>

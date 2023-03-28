@@ -5,8 +5,8 @@ import { Text, Flex } from "@chakra-ui/react";
 const Titles = () => {
 
   return (
-    <Flex w="100%" flexDir="row" pr="1rem" fontSize={["0.9rem", "1.1rem"]} fontFamily="Montserrat" m="1rem 0rem">
-      <Flex w="25%" pl="1rem" >
+    <Flex w="100%" flexDir="row" p="1.5rem 3.5rem 0rem 3.5rem" fontSize={["0.8rem", "0.9rem"]} fontFamily="Montserrat" m="1rem 0rem">
+      <Flex w="25%" >
         <Text color="#ffffff">Address</Text>
       </Flex>
       <Flex w="15%" justifyContent="center">
@@ -18,7 +18,7 @@ const Titles = () => {
       <Flex w="15%" justifyContent="center">
         <Text color="#ffffff">Tx</Text>
       </Flex>
-      <Flex w="15%" justifyContent="right" pr="1rem">
+      <Flex w="15%" justifyContent="right" >
         <Text color="#ffffff">Prize</Text>
       </Flex>
     </Flex>

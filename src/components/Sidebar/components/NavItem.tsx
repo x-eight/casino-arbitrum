@@ -37,6 +37,7 @@ const NavItem: React.FC<NavItemProps> = ({
       color={isSelected ? "#EEBA35" : "#ffffff"}
       bg="#181A25"
       onClick={clickEvent}
+      fontSize="0.9rem"
     >
       {!redirect ? (
         <Link to={to}>

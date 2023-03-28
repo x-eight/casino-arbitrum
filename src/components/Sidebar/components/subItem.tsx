@@ -50,6 +50,7 @@ const [menuId, setMenuId] = useState(id);
       title={name}
       _hover={{ color: "#EEBA35" }}
       color={isSelected || (selectedButton ===menuId )? "#EEBA35" : "#ffffff"}
+      fontSize="0.9rem"
       >
         <Avatar size="sm" src={image} />
         <Flex ml={"1rem"} display={navSize ? "none" : "flex"}>

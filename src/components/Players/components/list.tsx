@@ -24,9 +24,10 @@ const ListItem: React.FC<UserListItemProps> = ({
       w="100%"
       flexDir="row"
       fontFamily="Montserrat"
-      fontSize={["0.9rem", "1.1rem"]}
+      fontSize={["0.7rem", "0.8rem"]}
       textAlign="center"
       background={index % 2 !== 0 ? "#1E232F" : "none"}
+      p="0.3rem 2rem"
     >
       <Flex w="25%" pl="1rem" alignItems="center">
         <Text color="#ffffff">

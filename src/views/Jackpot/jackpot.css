@@ -3,16 +3,11 @@
 }
 
 @media only screen and (min-height: 1300px) {
-    .test {
+    .customHeight {
         height: 900px;
     }
 }
 
-@media only screen and (min-height: 1060px) {
-    .test {
-        height: 800px;
-    }
-}
 
 /*
 @media only screen and (max-height: 600px) {

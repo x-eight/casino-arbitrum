@@ -169,7 +169,7 @@ const Sidebar = () => {
                 alignItems="center"
               >
                 <Img w="2rem" h="2rem" src={BuyImage} />
-                <Text>Buy CASINU</Text>
+                <Text fontSize="0.8rem">Buy CASINU</Text>
               </Flex>
             )}
           </a>
