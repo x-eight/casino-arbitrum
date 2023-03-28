@@ -5,7 +5,7 @@ import { Text, Flex } from "@chakra-ui/react";
 const Titles = () => {
 
   return (
-    <Flex w="100%" flexDir="row" p="1.5rem 3.5rem 0rem 3.5rem" fontSize={["0.8rem", "0.9rem"]} fontFamily="Montserrat" m="1rem 0rem">
+    <Flex w="100%" flexDir="row" p="1.5rem 3.5rem 0rem 2.5rem" fontSize={["0.8rem", "0.9rem"]} fontFamily="Montserrat" m="1rem 0rem">
       <Flex w="25%" >
         <Text color="#ffffff">Address</Text>
       </Flex>

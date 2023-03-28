@@ -34,8 +34,8 @@ const NavItem: React.FC<NavItemProps> = ({
       id={`box${id}`}
       w={navSize ? "auto" : (width??"11rem")}
       _hover={{ color: "#EEBA35" }}
-      color={isSelected ? "#EEBA35" : "#ffffff"}
-      bg="#181A25"
+      color={isSelected ? "#1E232F" : "#ffffff"}
+      bg="#1E232F"
       onClick={clickEvent}
       fontSize="0.9rem"
     >

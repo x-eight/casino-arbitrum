@@ -88,7 +88,7 @@ const Sidebar = () => {
 
   return (
     <Flex
-      backgroundColor={"#181A25"}
+      backgroundColor="#1E232F"
       w={navSize ? "3.5rem" : "12rem"}
       flexDir="column"
       justifyContent="space-between"

@@ -102,7 +102,7 @@ const Jackpot = () => {
         background="#252A34"
       >
         <Titles />
-        <Flex fontFamily="Montserrat" background="#1E232F" p="0.5rem 2rem">
+        <Flex fontFamily="Montserrat" background="#1E232F" p="0.5rem 2rem 0.5rem 1.2rem">
           <Button
             variant="unstyled"
             m="0rem 1rem"

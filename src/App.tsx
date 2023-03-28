@@ -19,7 +19,7 @@ function App() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [window.devicePixelRatio]);
-  //94vh
+  //
   return (
     <CasinuFinanceProvider>
       <Flex flexDir="column" w="100%">
@@ -29,8 +29,7 @@ function App() {
           <Flex
             w={"100%"}
             flexDir="column"
-            backgroundImage="radial-gradient(at 2rem 2rem ,rgb(41, 36, 31),rgb(7, 7, 7),rgb(133, 123, 123)) !important"
-            backgroundSize="cover !important"
+            background="#181A25"
           >
             <Box>
               <AllRoutes />
@@ -45,6 +44,12 @@ function App() {
 export default App;
 
 /*
+w={"100%"}
+flexDir="column"
+backgroundImage="radial-gradient(at 2rem 2rem ,rgb(41, 36, 31),rgb(7, 7, 7),rgb(133, 123, 123)) !important"
+backgroundSize="cover !important"
+
+
 w={"100%"}
 flexDir="column"
 backgroundImage={`url(${backgroundImg})`}
