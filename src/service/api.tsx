@@ -35,7 +35,7 @@ export async function getRecentplayers(
   skip: number
 ): Promise<PlayersResponse[]> {
   try {
-    const response = await axios.get(`${urlWithProxy}/tickets?limit=15&skip=${skip}`);
+    const response = await axios.get(`${urlWithProxy}/tickets?limit=6&skip=${skip}`);
 
     return response.data.tickets.map((p:any) => {
       const dateObj = new Date(p.timestamp*1000); 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Divider, Flex } from "@chakra-ui/react";
 import Titles from "../components/titles";
 import ListItem from "../components/list";
 import { getRecentplayers } from "../../../service/api";
@@ -16,7 +16,7 @@ interface PlayersParams {
 
 const RecentPlayers: React.FC = () => {
   let [loading, setLoading] = useState(true);
-  const [segmentNum, setSegmentNum] = useState(15);
+  const [segmentNum, setSegmentNum] = useState(6);
   const [hasMore, setHasMore] = useState(true);
   const [players, setPlayers] = useState<PlayersParams[]>([]);
 
@@ -34,7 +34,7 @@ const RecentPlayers: React.FC = () => {
       const totalPlayers = await getRecentplayers(seg);
       if(totalPlayers.length>0){
         setPlayers(players.concat(totalPlayers));
-        setSegmentNum((segmentNum) => segmentNum + 15);
+        setSegmentNum((segmentNum) => segmentNum + 6);
       }else{
         setHasMore(false)
       }
@@ -54,8 +54,7 @@ const RecentPlayers: React.FC = () => {
 
 
   return (
-    <Box w="100%" overflowY="auto" onScroll={onScroll}>
-      
+    <Box w="100%">
       <Flex flexWrap="wrap">
         {loading ? (
           <Loader />

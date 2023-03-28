@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Flex } from "@chakra-ui/react";
+import { Box, Text, Flex, Divider } from "@chakra-ui/react";
 import TokenSymbol from "../../TokenSymbol";
 
 interface UserListItemProps {
@@ -20,6 +20,7 @@ const ListItem: React.FC<UserListItemProps> = ({
   prize,
 }) => {
   return (
+    <>
     <Flex
       w="100%"
       flexDir="row"
@@ -27,18 +28,18 @@ const ListItem: React.FC<UserListItemProps> = ({
       fontSize={["0.7rem", "0.8rem"]}
       textAlign="center"
       background={index % 2 !== 0 ? "#1E232F" : "none"}
-      p="0.3rem 1.2rem"
+      p="0.3rem 1.5rem"
     >
-      <Flex w="25%" pl="1rem" alignItems="center">
-        <Text color="#ffffff">
+      <Flex w="25%" alignItems="center">
+        <Text fontWeight="bold" color="#ffffff">
           {address ? `${address.slice(0, 6)}...${address.slice(38, 43)}` : ""}
         </Text>
       </Flex>
       <Flex w="15%" justifyContent="center" alignItems="center">
-        <Text color="#ffffff">{odds}%</Text>
+        <Text fontWeight="bold" color="#077307">{odds}%</Text>
       </Flex>
-      <Flex w="30%" justifyContent="center !important" alignItems="center">
-        <Text color="#ffffff">{created_at}</Text>
+      <Flex w="30%" justifyContent="center" alignItems="center">
+        <Text fontWeight="bold" color="#ffffff">{created_at}</Text>
       </Flex>
       <Flex w="15%" justifyContent="center" alignItems="center">
         <a
@@ -51,10 +52,12 @@ const ListItem: React.FC<UserListItemProps> = ({
           </Box>
         </a>
       </Flex>
-      <Flex w="15%" justifyContent="right" pr="1.5rem" alignItems="center">
-        <Text color="#EEBA35">{`$ ${prize}`}</Text>
+      <Flex w="15%" justifyContent="flex-end" alignItems="center">
+        <Text fontWeight="bold" color="#EEBA35">{`$ ${prize}`}</Text>
       </Flex>
     </Flex>
+    <Divider backgroundColor="#17181c"/>
+    </>
   );
 };
 

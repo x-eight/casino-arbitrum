@@ -1,18 +1,20 @@
 .customHeight {
     height: 450px;
+    min-height: 539px;
 }
 
-@media only screen and (min-height: 1300px) {
+@media only screen and (min-height: 900px) {
     .customHeight {
-        height: 900px;
+        height: auto;
+        min-height: 539px;
     }
 }
 
 
-/*
-@media only screen and (max-height: 600px) {
+
+@media only screen and (min-height: 800px) {
     .test {
-        height: 450px;
+        height: 200px;
+        min-height: 539px;
     }
 }
-*/
