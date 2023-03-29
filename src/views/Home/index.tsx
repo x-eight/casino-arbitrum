@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Flex, Text, Box } from "@chakra-ui/react";
 import TopList from "../../components/Top-players";
 
 const TopPlayer = () => {
+  const [skip, setSetSkip] = useState(0); //1->next  2->preview
+  const [hasMore, setHasMore] = useState(true);
+
   return (
     <Box height="55rem" overflowY="scroll">
       <Flex
@@ -24,7 +28,7 @@ const TopPlayer = () => {
         <Text color="#ffffff" mb="1rem">
           End : 2023-03-24 06:00 PM UTC
         </Text>
-        <TopList />
+        <TopList skip={skip} setHasMore={setHasMore}/>
       </Flex>
     </Box>
   );

@@ -1,8 +1,13 @@
-import { Flex, Text, Box } from "@chakra-ui/react";
+import { useState } from "react";
+import { Flex, Text, Box, Divider } from "@chakra-ui/react";
 import TopList from "../../components/Top-players";
 import ColumTitles from "../../components/Top-players/components/titles";
+import Filter from "../../components/Top-players/components/filter";
 
 const TopPlayer = () => {
+  const [skip, setSetSkip] = useState(0); //1->next  2->preview
+  const [hasMore, setHasMore] = useState(true);
+
   return (
     <Box h="30vh" fontFamily="Montserrat" fontWeight={"bold"}>
       <Flex
@@ -12,18 +17,28 @@ const TopPlayer = () => {
         p="1.5rem 0rem"
         borderRadius="1rem"
         background="#1E232F"
-        h="85vh"
+        minHeight="70vh"
+        borderTop="4px solid #252A3f"
       >
-        <Text pl="2rem" color="#ffffff" fontWeight="bold" fontSize="1.5rem">
+        <Text
+          color="#ffffff"
+          fontWeight="bold"
+          fontSize="1.5rem"
+          pl="2.5rem"
+        >
           Top Players
         </Text>
-        <Text pl="1.5rem" color="#ffffff">Start : 2023-03-17 06:00 PM UTC</Text>
-        <Text pl="1.5rem" color="#ffffff" mb="1rem">
+        <Text color="#ffffff" pl="2.5rem">
+          Start : 2023-03-17 06:00 PM UTC
+        </Text>
+        <Text color="#ffffff" mb="1rem" pl="2.5rem">
           End : 2023-03-24 06:00 PM UTC
         </Text>
         <ColumTitles />
-        {/* <hr color="#1E1D2D" style={{ width: "100%" }} /> */}
-        <TopList />
+        <Divider backgroundColor="#17181c" />
+        <Filter skip={skip} setSetSkip={setSetSkip} hasMore={hasMore} />
+        <Divider backgroundColor="#17181c" />
+        <TopList skip={skip} setHasMore={setHasMore} />
       </Flex>
     </Box>
   );

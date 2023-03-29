@@ -1,4 +1,4 @@
-import React, { useEffect,useContext } from "react";
+import React, { useEffect } from "react";
 import {
   Button,
   useDisclosure,
@@ -10,11 +10,12 @@ import {
   Flex,
   Center,
   Spacer,
-  Text,
+  Text,Img
 } from "@chakra-ui/react";
 import { CopyIcon, CheckIcon } from "@chakra-ui/icons";
 import TokenSymbol from "../TokenSymbol";
 import useCasinuFinance from "../../hooks/useCasinuFinance";
+import dices from "../../assets/dices.svg";
 
 type Props = {
   //children: React.ReactNode;
@@ -33,7 +34,7 @@ export const Address: React.FC<Props> = ({
   const { onCopy, setValue, hasCopied } = useClipboard("");
 
   useEffect(() => {
-    console.log("Aaaa",account)
+    console.log("account :",account)
   }, [account]);
 
   useEffect(() => {
@@ -41,14 +42,11 @@ export const Address: React.FC<Props> = ({
   }, []);
 
   const disconnect = async () => {
-    // @ts-ignore
-    //const test = await window.ethereum.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] });
-    //updateMetamaskConnection(false)
-
     setWalletAddress("");
     updateAccount("0x00")
   };
-
+  //#252A34
+  //<ModalContent backgroundImage="radial-gradient(at 2rem 2rem ,rgb(41, 36, 31),rgb(7, 7, 7),rgb(133, 123, 123)) !important">
   return (
     <>
       <Button
@@ -60,12 +58,13 @@ export const Address: React.FC<Props> = ({
         w="11rem"
         h="2.5rem"
       >
+        <Img w="2rem" h="2rem" src={dices} pr="0.5rem"/>
         {address?`${address.slice(0, 6)} ... ${address.slice(38, 43)}`:""}
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent backgroundImage="radial-gradient(at 2rem 2rem ,rgb(41, 36, 31),rgb(7, 7, 7),rgb(133, 123, 123)) !important">
+        <ModalContent backgroundColor="#252A34">
           <ModalBody>
             <Center flexDirection="column" >
               <TokenSymbol symbol="CASINU" size="8rem" />

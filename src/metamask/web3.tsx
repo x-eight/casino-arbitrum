@@ -69,7 +69,6 @@ export async function connectWallet(): Promise<wallet | undefined> {
         method: "eth_getBalance",
         params: [addresses[0], "latest"],
       });
-      console.log("balanceReq :", balanceReq);
 
       const balance = +ethers.utils.formatEther(balanceReq);
 

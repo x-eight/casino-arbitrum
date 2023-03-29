@@ -9,7 +9,7 @@ export function SelectPlayers(
   setSetSkip: React.Dispatch<React.SetStateAction<number>>,
   setHasMore: React.Dispatch<React.SetStateAction<boolean>>
 ) {
-  console.log("caso",caso,skip)
+
   if (caso === 2) {
     return (
       <WinnerPlayers

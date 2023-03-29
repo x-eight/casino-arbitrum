@@ -1,58 +1,40 @@
 import React, { useEffect,useState } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 
-import ColumTitles from "./components/titles";
 import PlayersListItem from "./components/players";
 import { getTopplayers } from "../../service/api";
 import Loader from "../Loader/Loader";
+
+interface listProps {
+  skip:number
+  setHasMore: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 interface PlayersParams {
   address: string;
   amount: number;
 }
 
+const limit = 6
 
-const TopList = () => {
+const TopList: React.FC<listProps> = ({skip, setHasMore}) => {
   let [loading, setLoading] = useState(true);
-  const [segmentNum, setSegmentNum] = useState(20);
-  const [hasMore, setHasMore] = useState(true);
   const [players, setPlayers] = useState<PlayersParams[]>([]);
 
   useEffect(() => {
     const firstPlayers = async () => {
-      const totalPlayers = await getTopplayers(0);
+      const totalPlayers = await getTopplayers(skip*limit,limit);
+      setHasMore(totalPlayers.hasMore)
+
       setLoading(false);
-      setPlayers(totalPlayers);
+      setPlayers(totalPlayers.data);
     };
     firstPlayers();
-  }, []);
-
-  const onSearchPositionFilter = async (seg: number) => {
-    if (segmentNum != 0) {
-      const totalPlayers = await getTopplayers(seg);
-      if(totalPlayers.length>0){
-        setPlayers(players.concat(totalPlayers));
-        setSegmentNum((segmentNum) => segmentNum + 20);
-      }else{
-        setHasMore(false)
-      }
-    }
-  };
-
-  const onScroll = (event: any) => {
-    const element = event.target;
-    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-      if (hasMore) {
-        onSearchPositionFilter(segmentNum)
-      }else{
-        console.log('this is tha last');
-      }
-    }
-  };
+  }, [skip]);
 
 
   return (
-    <Box w="100%" overflowY="auto" onScroll={onScroll}>
+    <Box w="100%">
       <Flex flexWrap="wrap">
         {loading ? (
           <Loader />

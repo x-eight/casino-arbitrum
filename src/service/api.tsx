@@ -138,18 +138,25 @@ interface TopsResponse {
 }
 
 export async function getTopplayers(
-  skip: number
-): Promise<TopsResponse[]> {
+  skip: number,
+  limit = 6
+): Promise<{hasMore:boolean, total:number, data:TopsResponse[]}>  {
   try {
     //const url = `${urlWithProxy}/topplayers/?limit=20&skip=${skip}`;
-    const data = tops 
-
-    return data.map((p) => {
+    const data = tops.slice(skip, limit).map((p) => {
       return {
         address: p._id,
         amount: p.buys,
       };
     });
+
+
+    let test = true
+    if(skip >7 || data.length<3){
+      test = false
+    }
+
+    return { hasMore:test, total: tops.length, data }
   } catch (err:any) {
     throw new Error(err.message);
   }
