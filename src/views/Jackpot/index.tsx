@@ -32,10 +32,6 @@ const Jackpot = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    console.log("skip :", skip);
-  }, [skip]);
-
   return (
     <Box>
       <Flex h="auto" p="4vh" justifyContent="space-evenly" alignItems="center">
@@ -117,7 +113,7 @@ const Jackpot = () => {
           setHasMore={setHasMore}
         />
         <Divider backgroundColor="#17181c" />
-        {SelectPlayers(typePlayers, skip, setSetSkip, hasMore, setHasMore)}
+        {SelectPlayers(typePlayers, skip, setSetSkip, setHasMore)}
       </Flex>
     </Box>
   );

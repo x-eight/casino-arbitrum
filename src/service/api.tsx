@@ -32,12 +32,13 @@ interface PlayersResponse {
 }
 
 export async function getRecentplayers(
-  skip: number
-): Promise<PlayersResponse[]> {
+  skip: number,
+  limit = 6
+): Promise<{hasMore:boolean, total:number, data:PlayersResponse[]}> {
   try {
-    const response = await axios.get(`${urlWithProxy}/tickets?limit=6&skip=${skip}`);
+    const response = await axios.get(`${urlWithProxy}/tickets?limit=${limit}&skip=${skip}`);
 
-    return response.data.tickets.map((p:any) => {
+    const data = response.data.tickets.map((p:any) => {
       const dateObj = new Date(p.timestamp*1000); 
       const dateString = dateObj.toLocaleDateString("en-US");
       const timeString = dateObj.toLocaleTimeString("en-US", { hour12: true, hour: "numeric", minute: "numeric" });
@@ -51,18 +52,26 @@ export async function getRecentplayers(
         created_at: `${dateString} ${timeString}`,
       };
     });
+    
+    let test = true
+    if(skip >7 || data.length<3){
+      test = false
+    }
+
+    return { hasMore:test, total:response.data.total, data }
   } catch (err:any) {
     throw new Error(err.message);
   }
 }
 
 export async function getRecentwinnings(
-  skip: number
-): Promise<PlayersResponse[]> {
+  skip: number,
+  limit = 6
+  ): Promise<{hasMore:boolean, total:number, data:PlayersResponse[]}> {
   try {
-    const response = await axios.get(`${urlWithProxy}/tickets/winners?limit=15&skip=${skip}`);
+    const response = await axios.get(`${urlWithProxy}/tickets/winners?limit=${limit}&skip=${skip}`);
 
-    return response.data.tickets.map((p:any) => {
+    const data = response.data.tickets.map((p:any) => {
       const dateObj = new Date(p.timestamp*1000);
       const dateString = dateObj.toLocaleDateString("en-US");
       const timeString = dateObj.toLocaleTimeString("en-US", { hour12: true, hour: "numeric", minute: "numeric" });
@@ -75,6 +84,13 @@ export async function getRecentwinnings(
         created_at: `${dateString} ${timeString}`,
       };
     });
+
+    let test = true
+    if(skip >7 || data.length<3){
+      test = false
+    }
+
+    return { hasMore:test, total:response.data.total, data }
   } catch (err:any) {
     throw new Error(err.message);
   }
@@ -83,12 +99,13 @@ export async function getRecentwinnings(
 //===========================================================//
 export async function getMyTickets(
   address:string,
-  skip: number
-): Promise<PlayersResponse[]> {
-  try {
-    const response = await axios.get(`${urlWithProxy}/tickets/${address}?limit=15&skip=${skip}`);
+  skip: number,
+  limit = 6
+  ): Promise<{hasMore:boolean, total:number, data:PlayersResponse[]}> {
+    try {
+    const response = await axios.get(`${urlWithProxy}/tickets/${address}?limit=${limit}&skip=${skip}`);
 
-    return response.data.tickets.map((p:any) => {
+    const data = response.data.tickets.map((p:any) => {
       const dateObj = new Date(p.timestamp*1000);
       const dateString = dateObj.toLocaleDateString("en-US");
       const timeString = dateObj.toLocaleTimeString("en-US", { hour12: true, hour: "numeric", minute: "numeric" });
@@ -101,6 +118,13 @@ export async function getMyTickets(
         created_at: `${dateString} ${timeString}`,
       };
     });
+
+    let test = true
+    if(skip >7 || data.length<3){
+      test = false
+    }
+
+    return { hasMore:test, total:response.data.total, data }
   } catch (err:any) {
     throw new Error(err.message);
   }

@@ -6,8 +6,6 @@ import Loader from "../../Loader/Loader";
 
 interface listProps {
   skip:number
-  setSetSkip: React.Dispatch<React.SetStateAction<number>>
-  hasMore:boolean
   setHasMore: React.Dispatch<React.SetStateAction<boolean>>
 }
 
@@ -20,36 +18,21 @@ interface PlayersParams {
   value?: number;
 }
 
-const WinnerPlayers: React.FC<listProps> = ({skip,setSetSkip,hasMore,setHasMore}) => {
+const limit = 6
+
+const WinnerPlayers: React.FC<listProps> = ({skip, setHasMore}) => {
   let [loading, setLoading] = useState(true);
-  const [segmentNum, setSegmentNum] = useState(6);
-  
-  const [winners, setWinners] = useState<PlayersParams[]>([])
+  const [players, setPlayers] = useState<PlayersParams[]>([]);
+
   useEffect(() => {
     const firstPlayers = async () => {
-      const totalWinners = await getRecentwinnings(0);
+      const totalPlayers = await getRecentwinnings(skip*limit,limit);
+      setHasMore(totalPlayers.hasMore)
+
       setLoading(false);
-      setWinners(totalWinners);
+      setPlayers(totalPlayers.data);
     };
     firstPlayers();
-  }, [])
-
-  const onSearchPositionFilter = async (seg: number) => {
-    if (segmentNum != 0) {
-      const totalPlayers = await getRecentwinnings(seg);
-      if(totalPlayers.length>0){
-        setWinners(winners.concat(totalPlayers));
-        setSegmentNum((segmentNum) => segmentNum + 6);
-      }else{
-        setHasMore(false)
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (hasMore) {
-      onSearchPositionFilter(segmentNum)
-    }
   }, [skip]);
 
   return (
@@ -59,7 +42,7 @@ const WinnerPlayers: React.FC<listProps> = ({skip,setSetSkip,hasMore,setHasMore}
           <Loader />
         ) : (
           <>
-            {winners.map((u, index) => (
+            {players.map((u, index) => (
        
                 <ListItem
                   key={index}

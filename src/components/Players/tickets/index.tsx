@@ -7,6 +7,8 @@ import useCasinuFinance from "../../../hooks/useCasinuFinance";
 
 interface listProps {
   skip:number
+  setHasMore: React.Dispatch<React.SetStateAction<boolean>>
+  setSetSkip: React.Dispatch<React.SetStateAction<number>>,
 }
 
 interface PlayersParams {
@@ -18,35 +20,40 @@ interface PlayersParams {
   value?: number;
 }
 
-const TicketPlayers: React.FC<listProps> = ({skip}) => {
+const limit = 6
+
+const TicketPlayers: React.FC<listProps> = ({ skip, setHasMore, setSetSkip }) => {
 
   const { account } = useCasinuFinance();
 
   let [loading, setLoading] = useState(true);
-  const [segmentNum, setSegmentNum] = useState(15);
-  const [hasMore, setHasMore] = useState(true);
-  const [winners, setWinners] = useState<PlayersParams[]>([])
+  const [players, setPlayers] = useState<PlayersParams[]>([]);
+
   useEffect(() => {
     const firstPlayers = async () => {
-      const totalWinners = await getMyTickets(account,0);
-      setLoading(false);
-      setWinners(totalWinners);
+      const totalPlayers = await getMyTickets(account, skip*limit,limit);
+      setHasMore(totalPlayers.hasMore)
 
+      setLoading(false);
+      setPlayers(totalPlayers.data);
     };
     firstPlayers();
-  }, [])
+  }, [skip]);
 
   useEffect(() => {
     const firstPlayers = async () => {
-      const totalWinners = await getMyTickets(account,0);
-      setSegmentNum(15)
+      const totalPlayers = await getMyTickets(account, 0,limit);
+      setSetSkip(0)
+      setHasMore(totalPlayers.hasMore)
+
       setLoading(false);
-      setWinners(totalWinners);
+      setPlayers(totalPlayers.data);
 
     };
     firstPlayers();
   }, [account])
 
+  /*
   const onSearchPositionFilter = async (seg: number) => {
     if (segmentNum != 0) {
       const totalPlayers = await getMyTickets(account,seg);
@@ -69,16 +76,16 @@ const TicketPlayers: React.FC<listProps> = ({skip}) => {
       }
     }
   };
+  */
 
   return (
-    <Box w="100%" overflowY="auto" onScroll={onScroll}>
+    <Box w="100%" /*overflowY="auto" onScroll={onScroll}*/>
       <Flex flexWrap="wrap">
         {loading ? (
           <Loader />
         ) : (
           <>
-            {winners.map((u, index) => (
-       
+            {players.map((u, index) => (
                 <ListItem
                   key={index}
                   index={index}
@@ -88,7 +95,6 @@ const TicketPlayers: React.FC<listProps> = ({skip}) => {
                   tx={u.tx}
                   prize={u.value}
                 />
-         
             ))}
           </>
         )}

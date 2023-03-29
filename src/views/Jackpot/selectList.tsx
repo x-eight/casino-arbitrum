@@ -7,21 +7,24 @@ export function SelectPlayers(
   caso: number,
   skip: number,
   setSetSkip: React.Dispatch<React.SetStateAction<number>>,
-  hasMore: boolean,
   setHasMore: React.Dispatch<React.SetStateAction<boolean>>
 ) {
+  console.log("caso",caso,skip)
   if (caso === 2) {
     return (
       <WinnerPlayers
         skip={skip}
-        setSetSkip={setSetSkip}
-        hasMore={hasMore}
         setHasMore={setHasMore}
       />
     );
   } else if (caso === 3) {
-    return <TicketPlayers skip={skip} />;
+    return <TicketPlayers skip={skip} setSetSkip={setSetSkip} setHasMore={setHasMore}/>;
   } else {
-    return <RecentPlayers skip={skip} />;
+    return (
+      <RecentPlayers
+        skip={skip}
+        setHasMore={setHasMore}
+      />
+    );
   }
 }

@@ -6,6 +6,7 @@ import Loader from "../../Loader/Loader";
 
 interface listProps {
   skip:number
+  setHasMore: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface PlayersParams {
@@ -17,41 +18,22 @@ interface PlayersParams {
   value?: number;
 }
 
-const RecentPlayers: React.FC<listProps> = ({skip}) => {
+const limit = 6
+
+const RecentPlayers: React.FC<listProps> = ({ skip, setHasMore }) => {
   let [loading, setLoading] = useState(true);
-  const [segmentNum, setSegmentNum] = useState(6);
-  const [hasMore, setHasMore] = useState(true);
   const [players, setPlayers] = useState<PlayersParams[]>([]);
 
   useEffect(() => {
     const firstPlayers = async () => {
-      const totalPlayers = await getRecentplayers(0);
+      const totalPlayers = await getRecentplayers(skip*limit,limit);
+      setHasMore(totalPlayers.hasMore)
+
       setLoading(false);
-      setPlayers(totalPlayers);
+      setPlayers(totalPlayers.data);
     };
     firstPlayers();
-  }, []);
-
-  const onSearchPositionFilter = async (seg: number) => {
-    if (segmentNum != 0) {
-      const totalPlayers = await getRecentplayers(seg);
-      if(totalPlayers.length>0){
-        setPlayers(players.concat(totalPlayers));
-        setSegmentNum((segmentNum) => segmentNum + 6);
-      }else{
-        setHasMore(false)
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (hasMore) {
-      onSearchPositionFilter(segmentNum)
-    }else{
-      console.log('this is tha last');
-    }
   }, [skip]);
-
 
   return (
     <Box w="100%">
