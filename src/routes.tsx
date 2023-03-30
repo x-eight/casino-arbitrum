@@ -11,13 +11,13 @@ function AllRoutes() {
         <Route
           path="/index.html"
           element={
-            <TopPlayer />
+            <Jackpot />
           }
         />
         <Route
           path="/"
           element={
-            <TopPlayer />
+            <Jackpot />
           }
         />
         <Route

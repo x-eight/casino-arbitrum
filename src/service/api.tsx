@@ -52,13 +52,8 @@ export async function getRecentplayers(
         created_at: `${dateString} ${timeString}`,
       };
     });
-    
-    let test = true
-    if(skip >7 || data.length<3){
-      test = false
-    }
 
-    return { hasMore:test, total:response.data.total, data }
+    return { hasMore:response.data.hasMore, total:response.data.total, data }
   } catch (err:any) {
     throw new Error(err.message);
   }
@@ -85,12 +80,7 @@ export async function getRecentwinnings(
       };
     });
 
-    let test = true
-    if(skip >7 || data.length<3){
-      test = false
-    }
-
-    return { hasMore:test, total:response.data.total, data }
+    return { hasMore:response.data.hasMore, total:response.data.total, data }
   } catch (err:any) {
     throw new Error(err.message);
   }
@@ -119,12 +109,7 @@ export async function getMyTickets(
       };
     });
 
-    let test = true
-    if(skip >7 || data.length<3){
-      test = false
-    }
-
-    return { hasMore:test, total:response.data.total, data }
+    return { hasMore:response.data.hasMore, total:response.data.total, data }
   } catch (err:any) {
     throw new Error(err.message);
   }
