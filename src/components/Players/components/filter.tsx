@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Flex, HStack, Button } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
@@ -65,7 +64,8 @@ const Filter: React.FC<FilterProps> = ({
       </HStack>
       <HStack>
         <Button
-          color="#ffffff"
+          colorScheme="#ffffff"
+          variant="outline"
           onClick={() => {
             if (skip > 0) {
               setSetSkip((skip) => skip - 1);
@@ -78,7 +78,8 @@ const Filter: React.FC<FilterProps> = ({
           <ChevronLeftIcon />
         </Button>
         <Button
-          color="#ffffff"
+          colorScheme="#ffffff"
+          variant="outline"
           onClick={() => {
             setSetSkip((skip) => skip + 1);
           }}

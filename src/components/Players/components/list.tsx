@@ -56,7 +56,7 @@ const ListItem: React.FC<UserListItemProps> = ({
         <Text fontWeight="bold" color="#EEBA35">{`$ ${prize}`}</Text>
       </Flex>
     </Flex>
-    <Divider backgroundColor="#17181c"/>
+    <Divider/>
     </>
   );
 };

@@ -60,82 +60,9 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
         <Text color="#EEBA35">$ {amount.toFixed(2)}</Text>
       </Flex>
     </Flex>
-    <Divider backgroundColor="#17181c"/>
+    <Divider/>
     </>
   );
 };
 
 export default PlayersListItem;
-
-
-/*
-import React, { useEffect, useState } from "react";
-import { Box, Text, Flex, Avatar, Divider } from "@chakra-ui/react";
-
-interface UserListItemProps {
-  address: string;
-  avatar?: string;
-  amount: number;
-  index: number;
-}
-
-function randomColor() {
-  const hex = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += hex[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-const PlayersListItem: React.FC<UserListItemProps> = ({
-  address,
-  avatar,
-  amount,
-  index,
-}) => {
-  const [colorAvatar, setColorAvatar] = useState("#ffffff");
-  useEffect(() => {
-    setColorAvatar(randomColor());
-  }, [address]);
-  //size="sm
-  return (
-    <>
-    <Flex w="100%" h="5rem" flexDir="row" key={index} background={index % 2 === 0 ? "#252A34" : "none"}>
-      <Flex w="10%" justifyContent="center" alignItems="center">
-        <Box color="#EEBA35">
-          {index === 0 ? (
-            <>🥇</>
-          ) : index === 1 ? (
-            <>🥈</>
-          ) : index === 2 ? (
-            <>🥉</>
-          ) : (
-            index+1
-          )}
-        </Box>
-      </Flex>
-      <Flex w="60%" alignItems="center" flexDir="row">
-        <Avatar
-          src={avatar ?? "avatar-1.jpg"}
-          bgColor={colorAvatar}
-          w="2rem"
-          h="2rem"
-        />
-        <Flex flexDir="column" m={"1rem"}>
-          <Text fontSize="1rem" color="#ffffff" >
-            {address?`${address.slice(0, 6)}...${address.slice(38, 43)}`:""}
-          </Text>
-        </Flex>
-      </Flex>
-      <Flex w="30%" justifyContent="center" alignItems="center">
-        <Text color="#EEBA35">$ {amount.toFixed(2)}</Text>
-      </Flex>
-    </Flex>
-    <Divider backgroundColor="#17181c"/>
-    </>
-  );
-};
-
-export default PlayersListItem;
-*/
