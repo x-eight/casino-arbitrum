@@ -102,7 +102,7 @@ const Jackpot = () => {
         borderTop="4px solid #252A3f"
       >
         <Titles ph={ph} />
-        <Divider/>
+        <hr color="#17181c" style={{width:"100%"}}/>
         <Filter
           ph={ph}
           typePlayers={typePlayers}
@@ -112,7 +112,7 @@ const Jackpot = () => {
           hasMore={hasMore}
           setHasMore={setHasMore}
         />
-        <Divider/>
+        <hr color="#17181c" style={{width:"100%"}}/>
         {SelectPlayers(typePlayers, skip, setSetSkip, setHasMore)}
       </Flex>
     </Box>

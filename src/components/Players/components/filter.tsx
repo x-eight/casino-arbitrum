@@ -64,7 +64,7 @@ const Filter: React.FC<FilterProps> = ({
       </HStack>
       <HStack>
         <Button
-          colorScheme="#ffffff"
+          color="white"
           variant="outline"
           onClick={() => {
             if (skip > 0) {
@@ -75,10 +75,10 @@ const Filter: React.FC<FilterProps> = ({
           size="xs"
           isDisabled={skip <= 0 ? true : false}
         >
-          <ChevronLeftIcon />
+          {"<"}
         </Button>
         <Button
-          colorScheme="#ffffff"
+          color="white"
           variant="outline"
           onClick={() => {
             setSetSkip((skip) => skip + 1);
@@ -87,7 +87,7 @@ const Filter: React.FC<FilterProps> = ({
           size="xs"
           isDisabled={!hasMore}
         >
-          <ChevronRightIcon />
+          {">"}
         </Button>
       </HStack>
     </Flex>

@@ -35,9 +35,9 @@ const TopPlayer = () => {
           End : 2023-03-24 06:00 PM UTC
         </Text>
         <ColumTitles />
-        <Divider/>
+        <hr color="#17181c" style={{width:"100%"}}/>
         <Filter skip={skip} setSetSkip={setSetSkip} hasMore={hasMore} />
-        <Divider/>
+        <hr color="#17181c" style={{width:"100%"}}/>
         <TopList skip={skip} setHasMore={setHasMore} />
       </Flex>
     </Box>

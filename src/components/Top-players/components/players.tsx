@@ -60,7 +60,7 @@ const PlayersListItem: React.FC<UserListItemProps> = ({
         <Text color="#EEBA35">$ {amount.toFixed(2)}</Text>
       </Flex>
     </Flex>
-    <Divider/>
+    <hr color="#17181c" style={{width:"100%"}}/>
     </>
   );
 };
