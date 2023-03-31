@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Text, Flex, Avatar, Divider } from "@chakra-ui/react";
+import { Box, Text, Flex, Avatar } from "@chakra-ui/react";
 
 interface UserListItemProps {
   address: string;

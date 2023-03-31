@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Flex, Divider } from "@chakra-ui/react";
+import { Box, Text, Flex } from "@chakra-ui/react";
 import TokenSymbol from "../../TokenSymbol";
 
 interface UserListItemProps {

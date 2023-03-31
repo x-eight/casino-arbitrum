@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Flex, Text, Box, Divider } from "@chakra-ui/react";
+import { Flex, Text, Box } from "@chakra-ui/react";
 import TopList from "../../components/Top-players";
 import ColumTitles from "../../components/Top-players/components/titles";
 import Filter from "../../components/Top-players/components/filter";

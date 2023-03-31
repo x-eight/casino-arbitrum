@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Flex, Text, Box, Divider, border } from "@chakra-ui/react";
+import { Flex, Text, Box } from "@chakra-ui/react";
 
 import { getJackpotstats } from "../../service/api";
 import Titles from "../../components/Players/components/titles";

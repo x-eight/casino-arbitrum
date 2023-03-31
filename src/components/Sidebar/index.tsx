@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button,VStack,Box, Flex, Text, IconButton, Img,Avatar } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Flex, Text, IconButton, Img } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import BuyImage from "../../assets/buy.svg";
 import NavItem from "./components/NavItem";
@@ -9,10 +8,12 @@ import TokenSymbol from "../TokenSymbol";
 import { getPriceCoingecko } from "../../service/api";
 
 //===========IMAGE==========//
-import home from "../../assets/home.svg";
-import competition from "../../assets/competition.svg";
-import nitro from "../../assets/nitro.svg";
-import dashboard from "../../assets/dashboard.png";
+import casino from "../../assets/home.png";
+import games from "../../assets/games.png";
+import trophy from "../../assets/trophy.png";
+import burnboost from "../../assets/burnboost.png";
+import jackpott from "../../assets/jackpott.png";
+import minipott from "../../assets/minipott.png";
 //=========================//
 
 const Sidebar = () => {
@@ -42,11 +43,12 @@ const Sidebar = () => {
       id: 1,
       to: "/",
       name: "Home",
-      image: home,
+      image: casino,
       redirect: `https://www.casinuarbitrum.xyz/`,
       subIndices: new Array<any>()
     },
     //{ id: 2, to: "/", name: "Dashboard", image: dashboard, redirect: "",subIndices: new Array<any>() },
+    /*
     {
       id: 3,
       to: "/nitro-pool",
@@ -55,11 +57,20 @@ const Sidebar = () => {
       redirect: `https://app.camelot.exchange/nitro/0x761Adb257558eBebE97d65AD7aCe5DDd4d06e83d`,
       subIndices: new Array<any>()
     },
+    */
+    {
+      id: 4,
+      to: "/BurnBoost",
+      name: "Burn to Boost",
+      image: burnboost,
+      redirect: "",
+      subIndices: new Array<any>()
+    },
     {
       id: 5,
       to: "/TopPlayer",
       name: "Top Players",
-      image: competition,
+      image: trophy,
       redirect: "",
       subIndices: new Array<any>()
     },
@@ -67,20 +78,20 @@ const Sidebar = () => {
       id: 6,
       to: "",
       name: "Games",
-      image: competition,
+      image: games,
       redirect: "",
       subIndices: [{
         id: 7,
         to: "/games/jackpot",
         name: "Jackpot",
-        image: nitro,
+        image: jackpott,
         redirect: "",
       },
       {
         id: 8,
         to: "/games/minipot",
         name: "Minipot",
-        image: competition,
+        image: minipott,
         redirect: "",
       }]
     },
@@ -126,6 +137,7 @@ const Sidebar = () => {
           />
           ):(
             <NavItem
+            key={i}
             index={n.id}
             id={i}
             to={n.to}
