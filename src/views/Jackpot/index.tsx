@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Flex, Text, Box, Divider } from "@chakra-ui/react";
+import { Flex, Text, Box, Divider, border } from "@chakra-ui/react";
 
 import { getJackpotstats } from "../../service/api";
 import Titles from "../../components/Players/components/titles";
@@ -102,7 +102,7 @@ const Jackpot = () => {
         borderTop="4px solid #252A3f"
       >
         <Titles ph={ph} />
-        <hr color="#17181c" style={{width:"100%"}}/>
+        <hr style={{borderColor:"#17181c", width:"100%" }}/>
         <Filter
           ph={ph}
           typePlayers={typePlayers}
@@ -112,7 +112,7 @@ const Jackpot = () => {
           hasMore={hasMore}
           setHasMore={setHasMore}
         />
-        <hr color="#17181c" style={{width:"100%"}}/>
+        <hr style={{borderColor:"#17181c", width:"100%" }}/>
         {SelectPlayers(typePlayers, skip, setSetSkip, setHasMore)}
       </Flex>
     </Box>

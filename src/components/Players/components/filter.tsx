@@ -1,5 +1,4 @@
 import { Flex, HStack, Button } from "@chakra-ui/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 interface FilterProps {
   ph: string;

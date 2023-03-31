@@ -56,7 +56,7 @@ const ListItem: React.FC<UserListItemProps> = ({
         <Text fontWeight="bold" color="#EEBA35">{`$ ${prize}`}</Text>
       </Flex>
     </Flex>
-    <hr color="#17181c" style={{width:"100%"}}/>
+    <hr style={{borderColor:"#17181c", width:"100%" }}/>
     </>
   );
 };
